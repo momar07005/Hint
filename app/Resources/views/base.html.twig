@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang=fr>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="language" content="en">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+        <title>{% block title %}Hint{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css"  href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
     </head>
     <body>
-        ça fonctionne bien
+ 		ca fonctionne 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
