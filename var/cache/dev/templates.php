@@ -152,5 +152,7 @@
   'WebProfilerBundle:Profiler:toolbar_redirect.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_redirect.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
+  ':default:footer.html.twig' => __DIR__.'/../../../app/Resources/views/default/footer.html.twig',
+  ':default:header.html.twig' => __DIR__.'/../../../app/Resources/views/default/header.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
 );

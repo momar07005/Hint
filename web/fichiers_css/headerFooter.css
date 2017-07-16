@@ -1,5 +1,5 @@
 /*All body elements*/
-body{
+header{
 	background-color: white;
 }
 
@@ -85,4 +85,48 @@ header div+span+span input:focus{
 
 @media (max-width: 770px){
 	
+}
+#footer-container-general {
+    background-color: #403438;
+    border-top: 7px solid #f0eced;
+    padding: 0 32px;
+}
+#footer-container-socialWidget {
+	background-color: #33292d;
+	border-bottom: 7px solid #208ac7;
+}
+#footer-container-socialWidget .footer-social {
+    height: 41px;
+    line-height: 41px;
+    overflow: hidden;   
+}
+#footer-container-socialWidget .footer-social ul li {
+	display: inline-block;
+	margin-left: 8px;
+}
+#footer-container-socialWidget .footer-social ul li a {
+	display: block;
+	width: 32px;
+}
+#footer-container-socialWidget .footer-social ul li a:hover {
+	transform: rotate(25deg);
+}
+.youtube {
+	background: transparent url('../social-photos/youtube_white.png') scroll no-repeat center center;
+}
+.facebook {
+	background: transparent url('../social-photos/facebook_white.png') scroll no-repeat center center;
+}
+.twitter {
+	background: transparent url('../social-photos/twitter_white.png') scroll no-repeat center center;
+}
+.column-1 {
+	
+}
+.column-2 {
+	border-left: 1px solid #33292d;
+}
+.column-2-text {
+	margin: 21px 0 21px 0;
+	color: #e5d7d3;
 }
