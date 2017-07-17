@@ -1,32 +1,35 @@
-/*All body elements*/
+header, body,footer{
+	overflow-x: hidden;
+}
+/*header*/
 header{
 	background-color: white;
 }
 
-/*header*/
 #logo{
 	height: 100px;
 	margin-bottom: 25px;
 	margin-top: 22px;
 	background-color: blue;
+	width: 24.999999999%;
+	margin-left: 8.333333%;
+	margin-right: 25%;
 }
 
-header div span {
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-header div+span{
+header div span{
 	border-bottom-width:1px;
 	border-bottom-style: solid;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
-	max-width: 150px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 25px;
+	width: 16%;
 	
 }
 
-header div+span:hover {
+header div span:hover {
 	border-bottom-width:4px;
 	border-bottom-color: #208ac7;
 	border-bottom-style: solid;
@@ -34,45 +37,51 @@ header div+span:hover {
 	font-weight: bold;
 }
 
-header div+span a{
+header div span a{
 	text-decoration: none;
 	color: black;
 }
 
-header div+span a:hover{
+header div span a:focus{
 	text-decoration: none;
 	color: black;
 }
 
-header div+span+span{
-	max-width: 8%;
-}
-
-header div+span+span input{
+header div input{
 	border-radius: 15px; 
+	height: 30px;
 	min-width: 50px; 
-	max-width: 100px;
+	max-width: 8%;
 	transition: min-width 1s;
 	border-color:black;	
+	margin-top: 50px;
+	margin-bottom: 50px;
 	position: absolute;
-	top: 0; 
-	right: 0;
-}
-
-header div+span+span input+i{
-	position: absolute;
-	top: 5px;
-	right: 5px;
-}
-header div+span+span input:focus{
-	border-radius: 15px;
-	min-width: 300%;
+	right: 10px;
+	margin-left: 5%;
 	
 }
+
+header div input+i{
+	background-image: url('../icons8-Search-26.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+header div input:focus{
+	border-radius: 15px;
+	min-width: 50%;
+	margin-left: 5%;
+	
+}
+
 #sup-header{
 	border-top-width: 7px;
 	border-top-style: solid;
 	border-top-color: #208ac7;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	overflow: hidden;
 }
 
 #sub-header{
@@ -83,9 +92,79 @@ header div+span+span input:focus{
 	background-color: #eaeaea; 
 }
 
-@media (max-width: 770px){
+@media (max-width: 730px) and (min-width: 550px){
+
+	header div span{
+		width: 26%;	
+	}
+
+	#logo{
+		margin-right: 20%;
+	}
 	
+	header div input{
+		
+		margin-left:10%; 
+	}
 }
+
+
+@media (max-width: 730px){
+
+	#sup-header{
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	header div input{
+		position: relative;
+		margin-top: 15px;
+		margin-right: 0px;
+		min-width: 50%;
+		margin-bottom: 5px;	
+	}
+
+	#logo{
+		width: 66.66674%;
+		margin-left: 16.66666%;
+		margin-right: 16.66666%;
+	}
+
+	header div span{
+		margin-bottom: 0px;
+		margin-top: 0px;	
+	}
+}
+
+@media (max-width: 551px){
+	header div span{
+		width: 27%;	
+	}
+}
+
+@media (max-width: 453px){
+	header div span{
+		width: 30%;
+	}
+}
+
+@media (max-width: 405px){
+	header div span{
+		width: 50%;
+	}
+}
+
+@media (max-width: 235px){
+	header div span{
+		width: 70%;
+	}
+}
+
+
+
+/*footer*/
+
 #footer-container-general {
     background-color: #403438;
     border-top: 7px solid #f0eced;
