@@ -2,4 +2,9 @@
 
 {% block fos_user_content %}
     {{ include('@FOSUser/Security/login_content.html.twig') }}
+    <script>
+        $(function() {
+            $('.login').hide();
+        });
+    </script>
 {% endblock fos_user_content %}
