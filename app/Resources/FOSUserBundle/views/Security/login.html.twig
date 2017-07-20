@@ -1,6 +1,11 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
+	<div class="row under-header">
+		<div class="container">
+			<h1 class="title">Se connecter</h1>
+		</div>
+	</div>
     {{ include('@FOSUser/Security/login_content.html.twig') }}
     <script>
         $(function() {
