@@ -59,4 +59,49 @@
 	text-decoration: none;
 	color: #9e9e9e;
 }
+.title-social {
+	font-size: 21px;
+}
+.btn-block {
+    display: block !important;
+    width: 100%;
+}
+.btn-facebook {
+    position: relative;
+    background: #47639e;
+    color: white;
+    border: 2px solid;
+}
+.btn-google {
+    position: relative;
+    background: #dd4b39;
+    color: white;
+    border: 2px solid;
+    border-color: none;
+}
+.btn-facebook:hover {
+	background: none !important;
+	color: #47639e;
+}
+.btn-facebook:hover .facebook-hover{
+	color: #47639e;
+}
+.btn-google:hover {
+	color: #dd4b39;
+	background: none !important;
+}
+.btn-google:hover .google-hover {
+	color: #dd4b39;
+}
+.btn-facebook a, .btn-google a {
+	text-decoration: none;
+	color: white;
+	font-weight: 700;
+}
+.icon-social {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    font-size: 30px;
+}
 

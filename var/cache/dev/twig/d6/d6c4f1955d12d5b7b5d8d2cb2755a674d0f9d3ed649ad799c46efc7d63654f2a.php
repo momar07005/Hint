@@ -15,11 +15,11 @@ class __TwigTemplate_df7a8b1888872c4f75b4c2cc3b2762d2db36a76d84961312e767a606b55
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_29e3ea018199cdd355b309e1746333e0f58cf98dd0f04557610d48a57a809af3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_29e3ea018199cdd355b309e1746333e0f58cf98dd0f04557610d48a57a809af3->enter($__internal_29e3ea018199cdd355b309e1746333e0f58cf98dd0f04557610d48a57a809af3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login_content.html.twig"));
+        $__internal_2c8ec13bf234f05f0d73aeb814d4e413373ee4281a3adee6a754c2f2da871f89 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2c8ec13bf234f05f0d73aeb814d4e413373ee4281a3adee6a754c2f2da871f89->enter($__internal_2c8ec13bf234f05f0d73aeb814d4e413373ee4281a3adee6a754c2f2da871f89_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login_content.html.twig"));
 
-        $__internal_3b80b37d94308ce96bef9678612295d9dabb571d6df8598514f51d8621c4deb5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3b80b37d94308ce96bef9678612295d9dabb571d6df8598514f51d8621c4deb5->enter($__internal_3b80b37d94308ce96bef9678612295d9dabb571d6df8598514f51d8621c4deb5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login_content.html.twig"));
+        $__internal_9e67a0a4075771779083e70669866bcaf64df863aa06c9680ff5b5ea3e81c404 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9e67a0a4075771779083e70669866bcaf64df863aa06c9680ff5b5ea3e81c404->enter($__internal_9e67a0a4075771779083e70669866bcaf64df863aa06c9680ff5b5ea3e81c404_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login_content.html.twig"));
 
         // line 2
         echo "
@@ -90,15 +90,30 @@ class __TwigTemplate_df7a8b1888872c4f75b4c2cc3b2762d2db36a76d84961312e767a606b55
                 </div>
             </div>
         </div>
+        <div class=\"col-sm-offset-1 col-sm-4\">
+            <div class=\"title title-social\">Je préfère les réseaux sociaux</div>
+            <div class=\"btn btn-block btn-facebook\">
+                <a class=\"facebook-hover\" href=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->env->getExtension('HWI\Bundle\OAuthBundle\Twig\Extension\OAuthExtension')->getLoginUrl("facebook"), "html", null, true);
+        echo "\"><i class=\"fa fa-facebook icon-social\"></i>Se connecter avec Facebook</a>
+            </div>
+            <div class=\"btn btn-block btn-google\">
+                <a class=\"google-hover\" href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('HWI\Bundle\OAuthBundle\Twig\Extension\OAuthExtension')->getLoginUrl("google"), "html", null, true);
+        echo "\"><i class=\"fa fa-google icon-social\"></i>Se connecter avec Google</a>
+            </div>
+        </div>
     </div>
 </div>
 
 ";
         
-        $__internal_29e3ea018199cdd355b309e1746333e0f58cf98dd0f04557610d48a57a809af3->leave($__internal_29e3ea018199cdd355b309e1746333e0f58cf98dd0f04557610d48a57a809af3_prof);
+        $__internal_2c8ec13bf234f05f0d73aeb814d4e413373ee4281a3adee6a754c2f2da871f89->leave($__internal_2c8ec13bf234f05f0d73aeb814d4e413373ee4281a3adee6a754c2f2da871f89_prof);
 
         
-        $__internal_3b80b37d94308ce96bef9678612295d9dabb571d6df8598514f51d8621c4deb5->leave($__internal_3b80b37d94308ce96bef9678612295d9dabb571d6df8598514f51d8621c4deb5_prof);
+        $__internal_9e67a0a4075771779083e70669866bcaf64df863aa06c9680ff5b5ea3e81c404->leave($__internal_9e67a0a4075771779083e70669866bcaf64df863aa06c9680ff5b5ea3e81c404_prof);
 
     }
 
@@ -114,7 +129,7 @@ class __TwigTemplate_df7a8b1888872c4f75b4c2cc3b2762d2db36a76d84961312e767a606b55
 
     public function getDebugInfo()
     {
-        return array (  84 => 30,  78 => 27,  70 => 22,  64 => 19,  60 => 18,  57 => 17,  51 => 15,  49 => 14,  45 => 13,  42 => 12,  36 => 10,  34 => 9,  25 => 2,);
+        return array (  104 => 44,  98 => 41,  84 => 30,  78 => 27,  70 => 22,  64 => 19,  60 => 18,  57 => 17,  51 => 15,  49 => 14,  45 => 13,  42 => 12,  36 => 10,  34 => 9,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -162,6 +177,15 @@ class __TwigTemplate_df7a8b1888872c4f75b4c2cc3b2762d2db36a76d84961312e767a606b55
                         <a href=\"\">Mot de passe oublié ?</a>
                     </p>
                 </div>
+            </div>
+        </div>
+        <div class=\"col-sm-offset-1 col-sm-4\">
+            <div class=\"title title-social\">Je préfère les réseaux sociaux</div>
+            <div class=\"btn btn-block btn-facebook\">
+                <a class=\"facebook-hover\" href=\"{{ hwi_oauth_login_url('facebook') }}\"><i class=\"fa fa-facebook icon-social\"></i>Se connecter avec Facebook</a>
+            </div>
+            <div class=\"btn btn-block btn-google\">
+                <a class=\"google-hover\" href=\"{{ hwi_oauth_login_url('google') }}\"><i class=\"fa fa-google icon-social\"></i>Se connecter avec Google</a>
             </div>
         </div>
     </div>
