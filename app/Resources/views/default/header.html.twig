@@ -1,5 +1,5 @@
 <div class="row">
-	<div id="super-header" class="col-sm-12">
+	<div id="sup-header" class="col-sm-12">
 		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 			<a id="btn-login" class="btn btn-danger" href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
 		{% else %}
@@ -7,20 +7,18 @@
 			<a id="btn-login" class="btn register" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
 		{% endif %}
 	</div>
-	<div id="principal-header" class="col-sm-12">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div id="logo" class="col-sm-3 col-md-3 col-lg-3">
-			Hint Logo
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4"></div>
-		<span class="col-sm-2 col-md-2 col-lg-2" ><a href="#">ACCES NIVEAUX</a>
-		</span>
-		<span class="col-sm-1 col-md-1 col-lg-1">
-			<input type="search" name="searchBar" placeholder="search">
-			<i class="fa fa-search"></i>
-		</span>
-	</div>
 </div>
+<div id="main-header">
+	<div id="logo" class="">
+		Hint Logo
+	</div>
+	
+	<span class="">
+		<a href="#">ACCES NIVEAUX</a>
+	</span>
+	<input type="search" name="searchBar" placeholder="  Search">
+</div>
+
 <div class="row" id="sub-header">
 
 </div>
