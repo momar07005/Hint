@@ -14,9 +14,19 @@
         <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-        
+    <body class="container-fluid">
+        <header class="row">
+            {% include 'default/header.html.twig' %}
+        </header>
+
+        {% block content %}
+                   
+        {% endblock content %}
+     
+        <footer class="row">
+        	{% include 'default/footer.html.twig' %}
+        </footer>
+
+        {% block javascripts %}{% endblock %}    
     </body>
 </html>

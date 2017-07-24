@@ -1,11 +1,15 @@
-{% extends '::default/index.html.twig' %}
+{% extends '::base.html.twig' %}
 {% block content %}
 	{% block NKHintBundle_content %}
 		
 	{% endblock NKHintBundle_content %}
-{% endblock content %}
-{% block aside %}
+
 	{% block NKHintBundle_aside %}
 
 	{% endblock NKHintBundle_aside %}
-{% endblock aside%}
+{% endblock content %}
+
+{% block NKHintBundle_stylesheets %}
+
+{% endblock NKHintBundle_stylesheets %}
+
