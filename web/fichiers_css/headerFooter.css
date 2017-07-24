@@ -148,12 +148,12 @@ header div input:focus{
 		justify-content: center;
 	}
 
-	header div input{
+	header div input, header div input:focus{
 		position: static;
 		margin-top: 15px;
 		margin-right: 0px;
 		margin-left: 0px;
-		min-width: 50%;
+		min-width: 80%;
 		margin-bottom: 5px;	
 	}
 

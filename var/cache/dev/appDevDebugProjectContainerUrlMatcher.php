@@ -113,13 +113,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // nk_hint_homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'nk_hint_homepage');
-            }
-
-            return array (  '_controller' => 'NK\\HintBundle\\Controller\\DefaultController::indexAction',  '_route' => 'nk_hint_homepage',);
+        // nk_hint_subjectsPerLevel
+        if ('/niveaux' === $pathinfo) {
+            return array (  '_controller' => 'NK\\HintBundle\\Controller\\SubjectsLevelsController::subjectsAction',  '_route' => 'nk_hint_subjectsPerLevel',);
         }
 
         // homepage

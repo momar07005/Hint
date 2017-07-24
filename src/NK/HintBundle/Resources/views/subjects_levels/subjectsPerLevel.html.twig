@@ -1,0 +1,20 @@
+{% extends 'NKHintBundle::layout.html.twig' %}
+{% block NKHintBundle_content %}
+	<div class="card-container">
+		{% for i in 0..9 %}
+			<div class="subject-card">
+				<div class="subject-title">
+					Mathématiques
+				</div>
+				<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
+				<div class="subject-inf">
+					Et là les informations sur la matière
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock NKHintBundle_content %}
+
+{% block NKHintBundle_aside %}
+
+{% endblock NKHintBundle_aside %}

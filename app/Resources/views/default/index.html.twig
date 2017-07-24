@@ -1,21 +1,15 @@
 {% extends 'base.html.twig' %}
-
-
 {% block body %}
     <div class="container-fluid">
         <header class="row">
             {% include 'default/header.html.twig' %}
         </header>
         {% block content %}
-            <div class="card-container">
-                {% for i in 0..11 %}
-                    {% 
-                        include 'NKHintBundle::subjectCard.html.twig'
-                    %}  
-                {% endfor %}
-            </div>
-        
+                   
         {% endblock content %}
+        {% block aside %}
+
+        {% endblock aside %}
         <footer class="row">
         	{% include 'default/footer.html.twig' %}
         </footer>

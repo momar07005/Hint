@@ -1,3 +1,3 @@
-nk_hint_homepage:
-    path:     /
-    defaults: { _controller: NKHintBundle:Default:index }
+nk_hint_subjectsPerLevel:
+    path:     /niveaux
+    defaults: { _controller: NKHintBundle:SubjectsLevels:subjects }
