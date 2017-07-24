@@ -1,9 +1,78 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
-
+<div class="container pt">
+    <div class="row">
+		<div class="col-sm-8">
+		     <div class="box box-signin">
+		     	<div class="box-content dark">
+					{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+						<div class="col-sm-12">
+							<div class="form-group col-sm-6">
+						    	{{ form_label(form.prenom, "Prenom", {'label_attr': {'class': 'control-label '}}) }}
+						        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.prenom.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						    <div class="form-group col-sm-6">
+						    	{{ form_label(form.nom, "Nom", {'label_attr': {'class': 'control-label '}}) }}
+						        {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.nom.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						</div>
+						<div class="col-sm-12">
+						    <div class="form-group col-sm-6">
+						    	{{ form_label(form.username, "Nom d'utilisateur", {'label_attr': {'class': 'control-label '}}) }}
+						        {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.username.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						    <div class="form-group col-sm-6">
+						    	{{ form_label(form.email, "Email", {'label_attr': {'class': 'control-label'}}) }}
+						        {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.email.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						</div>
+						<div class="col-sm-12">
+						    <div class="form-group col-sm-6">
+						    	{{ form_label(form.plainPassword, "Mot de passe", {'label_attr': {'class': 'control-label '}}) }}
+						        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.plainPassword.first.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						    <div class="form-group col-sm-6">
+						    	{{ form_label(form.plainPassword.second, "Répéter mot de passe", {'label_attr': {'class': 'control-label '}}) }}
+						        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+						        {% for errorItem in form.plainPassword.second.vars.errors %}
+						        <span style="color: red;">{{ errorItem.message }}</span>
+						        {% endfor %}
+						    </div>
+						</div>
+						<div class="margin-send-register">
+						    <input class="btn btn-success btn-send" type="submit" value="{{ 'registration.submit'|trans }}" />
+						</div>
+					    {{ form_rest(form) }}
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+            <div class="title title-social">Pourquoi s'inscrire ?</div>
+            <p class="text-register-page">
+            	Devenir membre sur <strong>my-hint</strong>, c'est accéder au forum et aux discussions en ligne pour apprendre et s'améliorer dans les matières qui vous intéresse.<br>
+				La création d'un compte est totalement <strong>gratuite</strong>. Vous pourrez ensuite choisir de devenir <strong>premium</strong> pour accéder et télécharger les videos des cours.
+            </p>
+            <div class="btn btn-block btn-facebook">
+                <a class="facebook-hover" href="{{ hwi_oauth_login_url('facebook') }}"><i class="fa fa-facebook icon-social"></i>S'inscrire avec Facebook</a>
+            </div>
+            <div class="btn btn-block btn-google">
+                <a class="google-hover" href="{{ hwi_oauth_login_url('google') }}"><i class="fa fa-google icon-social"></i>S'inscrire avec Google</a>
+            </div>
+        </div>
+	</div>
+</div>	
