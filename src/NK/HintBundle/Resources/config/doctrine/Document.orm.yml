@@ -1,0 +1,15 @@
+NK\HintBundle\Entity\Document:
+    type: entity
+    table: null
+    repositoryClass: NK\HintBundle\Repository\DocumentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomDocument:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

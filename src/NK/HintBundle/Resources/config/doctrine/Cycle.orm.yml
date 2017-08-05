@@ -1,0 +1,16 @@
+NK\HintBundle\Entity\Cycle:
+    type: entity
+    table: null
+    repositoryClass: NK\HintBundle\Repository\CycleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomCycle:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }

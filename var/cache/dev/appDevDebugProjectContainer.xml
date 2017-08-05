@@ -775,7 +775,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <argument>C:/Hint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -785,7 +785,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3367,12 +3367,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59763158d20ad8.76227039</argument>
+      <argument>59850f1ae0f646.06939999</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59763158d20ad8.76227039</argument>
+      <argument>59850f1ae0f646.06939999</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4084,6 +4084,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="AppBundle">AppBundle\Entity</argument>
+          <argument key="NKHintBundle">NK\HintBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -4129,10 +4130,22 @@
         <argument>C:\Hint\src\AppBundle\Entity</argument>
       </argument>
     </service>
+    <service id="doctrine.orm.default_yml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+      <argument type="collection">
+        <argument key="C:\Hint\src\NK\HintBundle\Resources\config\doctrine">NK\HintBundle\Entity</argument>
+      </argument>
+      <call method="setGlobalBasename">
+        <argument>mapping</argument>
+      </call>
+    </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>AppBundle\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_yml_metadata_driver"/>
+        <argument>NK\HintBundle\Entity</argument>
       </call>
       <call method="addDriver">
         <argument type="service">
@@ -4993,7 +5006,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>i7-PENacPO</argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <argument>C:/Hint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5001,7 +5014,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>h-jHfy+7AF</argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <argument>C:/Hint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5009,7 +5022,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>5OXtDxzpJa</argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <argument>C:/Hint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5017,7 +5030,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>BoUpcnUfgo</argument>
       <argument>0</argument>
-      <argument>BZ+OG3PjlS36NrdnPGA58+</argument>
+      <argument>SfibLMjtyCj47k83+iMpGn</argument>
       <argument>C:/Hint/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

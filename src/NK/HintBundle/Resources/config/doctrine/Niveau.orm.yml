@@ -1,0 +1,16 @@
+NK\HintBundle\Entity\Niveau:
+    type: entity
+    table: null
+    repositoryClass: NK\HintBundle\Repository\NiveauRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomNiv:
+            type: string
+            length: 255
+            column: nom_niv
+    lifecycleCallbacks: {  }

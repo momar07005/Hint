@@ -1,0 +1,16 @@
+NK\HintBundle\Entity\Categorie:
+    type: entity
+    table: null
+    repositoryClass: NK\HintBundle\Repository\CategorieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomCategory:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }
