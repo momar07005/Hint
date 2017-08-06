@@ -2,26 +2,47 @@
 
 namespace NK\HintBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Document
+ *
+ * @ORM\Table(name="document")
+ * @ORM\Entity(repositoryClass="NK\HintBundle\Repository\DocumentRepository")
  */
 class Document
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomDocument", type="string", length=255)
      */
     private $nomDocument;
+
+    /** 
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="documents")
+    */
+    private $category;
+
+    /** 
+     * @ORM\ManyToOne(targetEntity="Matiere", inversedBy="documents")
+    */
+    private $matiere;
 
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -38,7 +59,7 @@ class Document
     public function setNomDocument($nomDocument)
     {
         $this->nomDocument = $nomDocument;
-    
+
         return $this;
     }
 

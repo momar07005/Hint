@@ -1,3 +1,11 @@
 nk_hint_subjectsPerLevel:
     path:     /niveaux
     defaults: { _controller: NKHintBundle:SubjectsLevels:subjects }
+
+nk_hint_cours:
+    path:     /cours
+    defaults: { _controller: NKHintBundle:Document:cours }
+
+nk_hint_exercices:
+    path:     /exercices
+    defaults: { _controller: NKHintBundle:Document:exercices }

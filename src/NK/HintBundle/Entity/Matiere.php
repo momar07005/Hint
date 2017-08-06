@@ -2,26 +2,47 @@
 
 namespace NK\HintBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Matiere
+ *
+ * @ORM\Table(name="matiere")
+ * @ORM\Entity(repositoryClass="NK\HintBundle\Repository\MatiereRepository")
  */
 class Matiere
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomMatiere", type="string", length=255)
      */
-    private $intitule;
+    private $nomMatiere;
 
+    /** 
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="category")
+    */
+    private $documents;
+
+    /** 
+     * @ORM\ManyToMany(targetEntity="Niveau", inversedBy="matieres")
+     * @ORM\JoinTable(name="matieres_niveaux")
+    */
+    private $niveaux;
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -29,27 +50,27 @@ class Matiere
     }
 
     /**
-     * Set intitule
+     * Set nomMatiere
      *
-     * @param string $intitule
+     * @param string $nomMatiere
      *
      * @return Matiere
      */
-    public function setIntitule($intitule)
+    public function setNomMatiere($nomMatiere)
     {
-        $this->intitule = $intitule;
-    
+        $this->nomMatiere = $nomMatiere;
+
         return $this;
     }
 
     /**
-     * Get intitule
+     * Get nomMatiere
      *
      * @return string
      */
-    public function getIntitule()
+    public function getNomMatiere()
     {
-        return $this->intitule;
+        return $this->nomMatiere;
     }
 }
 

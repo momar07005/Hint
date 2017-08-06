@@ -2,26 +2,47 @@
 
 namespace NK\HintBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Niveau
+ *
+ * @ORM\Table(name="niveau")
+ * @ORM\Entity(repositoryClass="NK\HintBundle\Repository\NiveauRepository")
  */
 class Niveau
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomNiveau", type="string", length=255)
      */
-    private $nomNiv;
+    private $nomNiveau;
+
+    /** 
+     * @ORM\ManyToOne(targetEntity="Cycle", inversedBy="niveaux")
+    */
+    private $cyle;
+
+    /** 
+     * @ORM\ManyToMany(targetEntity="Matiere", mappedBy="niveaux")
+    */
+    private $matieres;
 
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -29,28 +50,27 @@ class Niveau
     }
 
     /**
-     * Set nomNiv
+     * Set nomNiveau
      *
-     * @param string $nomNiv
+     * @param string $nomNiveau
      *
      * @return Niveau
      */
-    public function setNomNiv($nomNiv)
+    public function setNomNiveau($nomNiveau)
     {
-        $this->nomNiv = $nomNiv;
-    
+        $this->nomNiveau = $nomNiveau;
+
         return $this;
     }
 
     /**
-     * Get nomNiv
+     * Get nomNiveau
      *
      * @return string
      */
-    public function getNomNiv()
+    public function getNomNiveau()
     {
-        return $this->nomNiv;
+        return $this->nomNiveau;
     }
-
 }
 

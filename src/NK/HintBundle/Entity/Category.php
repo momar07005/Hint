@@ -2,26 +2,41 @@
 
 namespace NK\HintBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Categorie
+ * Category
+ *
+ * @ORM\Table(name="category")
+ * @ORM\Entity(repositoryClass="NK\HintBundle\Repository\CategoryRepository")
  */
-class Categorie
+class Category
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomCategory", type="string", length=255, unique=true)
      */
     private $nomCategory;
 
+    /** 
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="category")
+    */
+    private $documents;
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -33,12 +48,12 @@ class Categorie
      *
      * @param string $nomCategory
      *
-     * @return Categorie
+     * @return Category
      */
     public function setNomCategory($nomCategory)
     {
         $this->nomCategory = $nomCategory;
-    
+
         return $this;
     }
 
