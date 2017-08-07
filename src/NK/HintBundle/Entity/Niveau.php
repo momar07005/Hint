@@ -38,6 +38,11 @@ class Niveau
     */
     private $matieres;
 
+    /** 
+     * @ORM\OneToMany(targetEntity="SousNiveau", mappedBy="matiere")
+    */
+    private $sousNiveaux;
+
 
     /**
      * Get id
@@ -72,5 +77,103 @@ class Niveau
     {
         return $this->nomNiveau;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->matieres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Set cyle
+     *
+     * @param \NK\HintBundle\Entity\Cycle $cyle
+     *
+     * @return Niveau
+     */
+    public function setCyle(\NK\HintBundle\Entity\Cycle $cyle = null)
+    {
+        $this->cyle = $cyle;
+
+        return $this;
+    }
+
+    /**
+     * Get cyle
+     *
+     * @return \NK\HintBundle\Entity\Cycle
+     */
+    public function getCyle()
+    {
+        return $this->cyle;
+    }
+
+    /**
+     * Add matiere
+     *
+     * @param \NK\HintBundle\Entity\Matiere $matiere
+     *
+     * @return Niveau
+     */
+    public function addMatiere(\NK\HintBundle\Entity\Matiere $matiere)
+    {
+        $this->matieres[] = $matiere;
+
+        return $this;
+    }
+
+    /**
+     * Remove matiere
+     *
+     * @param \NK\HintBundle\Entity\Matiere $matiere
+     */
+    public function removeMatiere(\NK\HintBundle\Entity\Matiere $matiere)
+    {
+        $this->matieres->removeElement($matiere);
+    }
+
+    /**
+     * Get matieres
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMatieres()
+    {
+        return $this->matieres;
+    }
+
+    /**
+     * Get sousNiveaux
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSousNiveaux()
+    {
+        return $this->sousNiveaux;
+    }
+
+    /**
+     * Add sousNiveaux
+     *
+     * @param \NK\HintBundle\Entity\SousNiveau $sousNiveaux
+     *
+     * @return Niveau
+     */
+    public function addSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
+    {
+        $this->sousNiveaux[] = $sousNiveaux;
+
+        return $this;
+    }
+
+    /**
+     * Remove sousNiveaux
+     *
+     * @param \NK\HintBundle\Entity\SousNiveau $sousNiveaux
+     */
+    public function removeSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
+    {
+        $this->sousNiveaux->removeElement($sousNiveaux);
+    }
+}

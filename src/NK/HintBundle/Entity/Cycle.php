@@ -67,5 +67,45 @@ class Cycle
     {
         return $this->nomCycle;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->niveaux = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add niveaux
+     *
+     * @param \NK\HintBundle\Entity\Niveau $niveaux
+     *
+     * @return Cycle
+     */
+    public function addNiveaux(\NK\HintBundle\Entity\Niveau $niveaux)
+    {
+        $this->niveaux[] = $niveaux;
+
+        return $this;
+    }
+
+    /**
+     * Remove niveaux
+     *
+     * @param \NK\HintBundle\Entity\Niveau $niveaux
+     */
+    public function removeNiveaux(\NK\HintBundle\Entity\Niveau $niveaux)
+    {
+        $this->niveaux->removeElement($niveaux);
+    }
+
+    /**
+     * Get niveaux
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNiveaux()
+    {
+        return $this->niveaux;
+    }
+}
