@@ -66,45 +66,4 @@ class Category
     {
         return $this->nomCategory;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add document
-     *
-     * @param \NK\HintBundle\Entity\Document $document
-     *
-     * @return Category
-     */
-    public function addDocument(\NK\HintBundle\Entity\Document $document)
-    {
-        $this->documents[] = $document;
-    
-        return $this;
-    }
-
-    /**
-     * Remove document
-     *
-     * @param \NK\HintBundle\Entity\Document $document
-     */
-    public function removeDocument(\NK\HintBundle\Entity\Document $document)
-    {
-        $this->documents->removeElement($document);
-    }
-
-    /**
-     * Get documents
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getDocuments()
-    {
-        return $this->documents;
-    }
 }

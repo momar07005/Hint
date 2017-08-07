@@ -77,12 +77,14 @@ class Niveau
     {
         return $this->nomNiveau;
     }
+    
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->matieres = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->sousNiveaux = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -95,7 +97,7 @@ class Niveau
     public function setCyle(\NK\HintBundle\Entity\Cycle $cyle = null)
     {
         $this->cyle = $cyle;
-
+    
         return $this;
     }
 
@@ -119,7 +121,7 @@ class Niveau
     public function addMatiere(\NK\HintBundle\Entity\Matiere $matiere)
     {
         $this->matieres[] = $matiere;
-
+    
         return $this;
     }
 
@@ -144,16 +146,6 @@ class Niveau
     }
 
     /**
-     * Get sousNiveaux
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSousNiveaux()
-    {
-        return $this->sousNiveaux;
-    }
-
-    /**
      * Add sousNiveaux
      *
      * @param \NK\HintBundle\Entity\SousNiveau $sousNiveaux
@@ -163,7 +155,7 @@ class Niveau
     public function addSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
     {
         $this->sousNiveaux[] = $sousNiveaux;
-
+    
         return $this;
     }
 
@@ -175,5 +167,15 @@ class Niveau
     public function removeSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
     {
         $this->sousNiveaux->removeElement($sousNiveaux);
+    }
+
+    /**
+     * Get sousNiveaux
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSousNiveaux()
+    {
+        return $this->sousNiveaux;
     }
 }

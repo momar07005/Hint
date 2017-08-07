@@ -85,7 +85,7 @@ class Cycle
     public function addNiveaux(\NK\HintBundle\Entity\Niveau $niveaux)
     {
         $this->niveaux[] = $niveaux;
-
+    
         return $this;
     }
 

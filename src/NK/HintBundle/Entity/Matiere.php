@@ -29,7 +29,7 @@ class Matiere
     private $nomMatiere;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Document", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="matiere")
     */
     private $documents;
 
@@ -77,6 +77,7 @@ class Matiere
     {
         return $this->nomMatiere;
     }
+
     /**
      * Constructor
      */
@@ -84,6 +85,7 @@ class Matiere
     {
         $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
         $this->niveaux = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->sousNiveaux = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -96,7 +98,7 @@ class Matiere
     public function addDocument(\NK\HintBundle\Entity\Document $document)
     {
         $this->documents[] = $document;
-
+    
         return $this;
     }
 
@@ -130,7 +132,7 @@ class Matiere
     public function addNiveaux(\NK\HintBundle\Entity\Niveau $niveaux)
     {
         $this->niveaux[] = $niveaux;
-
+    
         return $this;
     }
 
@@ -164,7 +166,7 @@ class Matiere
     public function addSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
     {
         $this->sousNiveaux[] = $sousNiveaux;
-
+    
         return $this;
     }
 
