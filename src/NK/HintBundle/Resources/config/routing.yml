@@ -1,6 +1,8 @@
 nk_hint_subjectsPerLevel:
-    path:     /niveaux
-    defaults: { _controller: NKHintBundle:SubjectsLevels:subjects }
+    path:     /{niveauId}/matières/{matiereSelectionneeId}
+    defaults: 
+         _controller: NKHintBundle:SubjectsLevels:subjects 
+         matiereSelectionneeId:    0
 
 nk_hint_cours:
     path:     /cours

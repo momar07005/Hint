@@ -16,7 +16,7 @@
     </head>
     <body class="container-fluid">
         <header class="row">
-            {% include 'default/header.html.twig' %}
+            {{ render(controller("NKHintBundle:Header:header")) }}
         </header>
 
         {% block content %}
