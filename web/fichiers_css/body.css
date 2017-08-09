@@ -150,6 +150,33 @@
 .card-container{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 80%;
+}
+.body-container{
+	
+}
+
+.main-section{
+	width: 80%;
+	border-style: double;
+}
+
+.aside{
+	height: auto;
+	width: 20%;
+	float: right;
+	border-left-style: double;
+	text-align: center;
+	
+}
+
+.aside ul {
+	list-style-type: none;
+}
+
+.cycle{
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
 }

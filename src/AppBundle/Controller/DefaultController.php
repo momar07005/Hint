@@ -18,7 +18,9 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $listeNiveaux = $em->getRepository("NKHintBundle:Niveau")
                         ->findAll();
-        return $this->render('default/index.html.twig', array('listeNiveaux' => $listeNiveaux));
+         $listeCycles = $em->getRepository("NKHintBundle:Cycle")
+                        ->findAll();
+        return $this->render('default/index.html.twig', array('listeNiveaux' => $listeNiveaux, 'listeCycles' => $listeCycles));
     }
     
 }
