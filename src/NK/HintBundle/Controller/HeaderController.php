@@ -11,8 +11,11 @@ class HeaderController extends Controller
 {
     public function headerAction()
     {
-    	$em = $this->getDoctrine()->getManager();
-    	$listeNiveaux = $em->getRepository("NKHintBundle:Niveau")->findAll();
-        return $this->render('default/header.html.twig', array('listeNiveaux' => $listeNiveaux));
+    	$em = $this->getDoctrine()
+    			   ->getManager();
+    	$listeNiveaux = $em->getRepository("NKHintBundle:Niveau")
+    					   ->findAll();
+        return $this->render('default/header.html.twig', 
+        	array('listeNiveaux' => $listeNiveaux));
     }
 }

@@ -1,9 +1,9 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 {% block NKHintBundle_content %}
 	<div class="card-container">
-		{% if listeMatieres is defined %}
+		{% if listeMatieres is not null %}
 			{% for matiere in listeMatieres %}
-				<a href="{{ path('nk_hint_subjectsPerLevel', { 'niveauId': niveau.id, 'matiereSelectionneeId': matiere.id}) }}">
+				<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': matiere.niveau.id, 'idMatiere': matiere.nomMatiere}) }}">
 					<div class="subject-card">
 						<div class="subject-title">
 							{{matiere.nomMatiere}}
@@ -15,16 +15,6 @@
 					</div>
 				</a>
 			{% endfor %}
-		{% else %}
-			<ul>
-				{% for document in listeDocuments %}
-							<li>{{document.nomDocument}}</li>
-				{% endfor %}
-			</ul>
 		{% endif %}
 	</div>
 {% endblock NKHintBundle_content %}
-
-{% block NKHintBundle_aside %}
-
-{% endblock NKHintBundle_aside %}

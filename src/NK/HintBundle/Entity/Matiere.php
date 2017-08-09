@@ -34,10 +34,9 @@ class Matiere
     private $documents;
 
     /** 
-     * @ORM\ManyToMany(targetEntity="Niveau", inversedBy="matieres")
-     * @ORM\JoinTable(name="matieres_niveaux")
+     * @ORM\ManyToOne(targetEntity="Niveau", inversedBy="matieres")
     */
-    private $niveaux;
+    private $niveau;
 
     /** 
      * @ORM\OneToMany(targetEntity="SousNiveau", mappedBy="matiere")
@@ -188,5 +187,29 @@ class Matiere
     public function getSousNiveaux()
     {
         return $this->sousNiveaux;
+    }
+
+    /**
+     * Set niveau
+     *
+     * @param \NK\HintBundle\Entity\Niveau $niveau
+     *
+     * @return Matiere
+     */
+    public function setNiveau(\NK\HintBundle\Entity\Niveau $niveau = null)
+    {
+        $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    /**
+     * Get niveau
+     *
+     * @return \NK\HintBundle\Entity\Niveau
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
     }
 }

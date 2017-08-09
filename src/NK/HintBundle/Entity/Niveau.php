@@ -34,7 +34,7 @@ class Niveau
     private $cyle;
 
     /** 
-     * @ORM\ManyToMany(targetEntity="Matiere", mappedBy="niveaux")
+     * @ORM\OneToMany(targetEntity="Matiere", mappedBy="niveau")
     */
     private $matieres;
 

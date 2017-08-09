@@ -10,4 +10,12 @@ namespace NK\HintBundle\Repository;
  */
 class MatiereRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function obtenirListeMatieres($idNiveau)
+	{
+		$qb = $this->createQueryBuilder('a')
+				->Join('a.niveau','b', 'WITH', 'b.id ='.$idNiveau)
+				->addSelect('b');
+		return $qb->getQuery()
+				->getResult();
+	}
 }
