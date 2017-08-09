@@ -1,20 +1,40 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 {% block NKHintBundle_content %}
+	{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
 	<div class="card-container">
-		{% if listeMatieres is not null %}
-			{% for matiere in listeMatieres %}
-				<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': matiere.niveau.id, 'idMatiere': matiere.nomMatiere}) }}">
-					<div class="subject-card">
-						<div class="subject-title">
-							{{matiere.nomMatiere}}
+		{% if listeMatieres is defined %}  
+				{% for matiere in listeMatieres %}
+					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': matiere.niveau.id, 'idMatiere': matiere.id}) }}">
+						<div class="subject-card">
+							<div class="subject-title">
+								{{matiere.nomMatiere}}
+							</div>
+							<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
+							<div class="subject-inf">
+								Et là les informations sur la matière
+							</div>
 						</div>
-						<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
-						<div class="subject-inf">
-							Et là les informations sur la matière
-						</div>
-					</div>
-				</a>
-			{% endfor %}
+					</a>
+				{% endfor %}
 		{% endif %}
+
+			{% if listeNiveaux is defined %}  
+					{% for niveau in listeNiveaux %}
+						<div class="level-name">
+		    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
+		    						{{niveau.nomNiveau}}
+		    					</a>
+		    			</div>
+					{% endfor %}
+			{% endif %}
+				{% if listeDocuments is defined %}  
+					{% for document in listeDocuments %}
+						<div class="document-name">
+		    					<a href="{{ path('nk_hint_cours') }}">
+		    						{{document.nomDocument}}
+		    					</a>
+		    			</div>
+					{% endfor %}
+			{% endif %}
 	</div>
 {% endblock NKHintBundle_content %}

@@ -31,7 +31,7 @@ class Niveau
     /** 
      * @ORM\ManyToOne(targetEntity="Cycle", inversedBy="niveaux")
     */
-    private $cyle;
+    private $cycle;
 
     /** 
      * @ORM\OneToMany(targetEntity="Matiere", mappedBy="niveau")
@@ -39,7 +39,7 @@ class Niveau
     private $matieres;
 
     /** 
-     * @ORM\OneToMany(targetEntity="SousNiveau", mappedBy="matiere")
+     * @ORM\OneToMany(targetEntity="SousNiveau", mappedBy="niveau")
     */
     private $sousNiveaux;
 
@@ -88,27 +88,27 @@ class Niveau
     }
 
     /**
-     * Set cyle
+     * Set cycle
      *
-     * @param \NK\HintBundle\Entity\Cycle $cyle
+     * @param \NK\HintBundle\Entity\Cycle $cycle
      *
      * @return Niveau
      */
-    public function setCyle(\NK\HintBundle\Entity\Cycle $cyle = null)
+    public function setCycle(\NK\HintBundle\Entity\Cycle $cycle = null)
     {
-        $this->cyle = $cyle;
+        $this->cycle = $cycle;
     
         return $this;
     }
 
     /**
-     * Get cyle
+     * Get cycle
      *
      * @return \NK\HintBundle\Entity\Cycle
      */
-    public function getCyle()
+    public function getcycle()
     {
-        return $this->cyle;
+        return $this->cycle;
     }
 
     /**

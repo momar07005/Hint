@@ -2,32 +2,13 @@
 
 {% block content %}
 <div class="body-container">
-	<aside class="aside">
-	    <ul>
-	    	{% for cycle in listeCycles %}
-
-	    		<li class="cycle">{{cycle.nomCycle}}</li>
-	    		
-		    		{% for niveau in listeNiveaux %}
-
-		    			{% if niveau.cyle.id == cycle.id %} 
-
-		    				<div class="subject-name">{{niveau.nomNiveau}}</div>
-
-		    			{% endif %}
-
-		    		{% endfor %}
-	    		
-	    		<br><br>
-
-	    	{% endfor %}
-	    </ul>
-    </aside>
+	
     <section class="main-section">
         <p>
             Ici les différents niveaux au centre 
         </p>
     </section>
+     {{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
     
 </div> 
 {% endblock content %}

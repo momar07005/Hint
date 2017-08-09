@@ -150,7 +150,7 @@
 .card-container{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 	width: 80%;
 }
 .body-container{
@@ -179,4 +179,12 @@
 	font-size: 24px;
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+.level-name{
+	color: red;
+}
+
+.document-name{
+	color: green;
 }
