@@ -1,0 +1,8 @@
+{% extends 'NKHintBundle::layout.html.twig' %}
+{% block NKHintBundle_content %}
+	{% for alert in app.session.flashbag.get('message') %}
+		<div class="alert alert-success">{{alert}}</div>
+	{% endfor %}
+	{{ form_start(form) }}
+	{{ form_end(form) }}
+{% endblock NKHintBundle_content %}

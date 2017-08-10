@@ -3,6 +3,8 @@
 namespace NK\HintBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Document
@@ -24,9 +26,21 @@ class Document
     /**
      * @var string
      *
-     * @ORM\Column(name="nomDocument", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
      */
     private $nomDocument;
+
+    /**
+     * @Vich\UploadableField(mapping="document_pdf", fileNameProperty="nom")
+     * @var File
+     */
+    private $pdf;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /** 
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="documents")
@@ -47,6 +61,22 @@ class Document
     public function getId()
     {
         return $this->id;
+    }
+
+     public function setPdf(File $pdf = null)
+    {
+        $this->pdf = $pdf;
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($pdf) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+    public function getPdf()
+    {
+        return $this->pdf;
     }
 
     /**
@@ -121,5 +151,29 @@ class Document
     public function getMatiere()
     {
         return $this->matiere;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Document
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

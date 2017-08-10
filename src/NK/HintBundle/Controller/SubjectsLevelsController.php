@@ -12,36 +12,20 @@ class SubjectsLevelsController extends Controller
     {	$array=null;
     	$em = $this->getDoctrine()
                 ->getManager();
-        if ($idCycle!=0 && $idNiveau==0 && $idMatiere==0) {
-
+        if ($idCycle!=0 && $idNiveau==0 && $idMatiere==0) 
+        {
         	$cycle = $em->getRepository("NKHintBundle:Cycle")
-                           		->find($idCycle);
+                        ->find($idCycle);
             $listeNiveaux = $cycle->getNiveaux();
             $array = array('listeNiveaux' => $listeNiveaux);
-
-        } else if ($idNiveau!=0 && $idCycle==0 && $idMatiere==0) {
+        } 
+        else if ($idNiveau!=0 && $idCycle==0 && $idMatiere==0) 
+        {
         	$listeMatieres = $em->getRepository("NKHintBundle:Matiere")
-                            ->obtenirListeMatieres($idNiveau);
-           
+                                ->obtenirListeMatieres($idNiveau);
             $array = array('listeMatieres' => $listeMatieres);
         } 
 
-
-
-
-
-
-
-        else if ($idMatiere!=0) {
-       
-        	$listeDocuments =$em->getRepository("NKHintBundle:Matiere")
-                           		->find($idMatiere)
-                           		->getDocuments();
-            $array = array('listeDocuments' => $listeDocuments);
-        }
-        
-        
-    	
 	   return $this->render('NKHintBundle:subjects_levels:subjectsPerLevel.html.twig', 
             $array);
     }
