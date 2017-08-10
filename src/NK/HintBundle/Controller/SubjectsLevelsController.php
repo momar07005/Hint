@@ -24,7 +24,15 @@ class SubjectsLevelsController extends Controller
                             ->obtenirListeMatieres($idNiveau);
            
             $array = array('listeMatieres' => $listeMatieres);
-        } else if ($idMatiere!=0) {
+        } 
+
+
+
+
+
+
+
+        else if ($idMatiere!=0) {
        
         	$listeDocuments =$em->getRepository("NKHintBundle:Matiere")
                            		->find($idMatiere)

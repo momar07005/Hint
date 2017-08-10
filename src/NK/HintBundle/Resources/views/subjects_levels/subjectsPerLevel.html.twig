@@ -1,40 +1,56 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 {% block NKHintBundle_content %}
-	{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
-	<div class="card-container">
-		{% if listeMatieres is defined %}  
-				{% for matiere in listeMatieres %}
-					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': matiere.niveau.id, 'idMatiere': matiere.id}) }}">
-						<div class="subject-card">
-							<div class="subject-title">
-								{{matiere.nomMatiere}}
+	<div class="main-container">
+	
+			{% if listeMatieres is defined %}  
+				<div class="card-container">
+					{% for matiere in listeMatieres %}
+						<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': matiere.niveau.id, 'idMatiere': matiere.id}) }}">
+							<div class="subject-card">
+								<div class="subject-title">
+									{{matiere.nomMatiere}}
+								</div>
+								<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
+								<div class="subject-inf">
+									Et là les informations sur la matière
+								</div>
 							</div>
-							<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
-							<div class="subject-inf">
-								Et là les informations sur la matière
-							</div>
-						</div>
-					</a>
-				{% endfor %}
-		{% endif %}
+						</a>
+					{% endfor %}
+				</div>
+			{% endif %}
 
 			{% if listeNiveaux is defined %}  
+				<div class="level-container">
 					{% for niveau in listeNiveaux %}
-						<div class="level-name">
-		    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
-		    						{{niveau.nomNiveau}}
-		    					</a>
-		    			</div>
+							<div class="level-name">
+			    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
+			    						{{niveau.nomNiveau}}
+			    					</a>
+			    			</div>
 					{% endfor %}
+				</div>
 			{% endif %}
-				{% if listeDocuments is defined %}  
+
+
+
+
+
+			{% if listeDocuments is defined %}  
+				<div class="document-container">
 					{% for document in listeDocuments %}
 						<div class="document-name">
-		    					<a href="{{ path('nk_hint_cours') }}">
-		    						{{document.nomDocument}}
-		    					</a>
-		    			</div>
+			    				<a href="{{ path('nk_hint_cours') }}">
+			    					{{document.nomDocument}}
+			    				</a>
+			    		</div>
 					{% endfor %}
+				</div>
 			{% endif %}
+		
+
+
+		
+		{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
 	</div>
 {% endblock NKHintBundle_content %}

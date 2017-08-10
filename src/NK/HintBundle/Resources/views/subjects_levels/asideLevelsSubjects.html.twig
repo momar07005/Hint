@@ -1,27 +1,32 @@
 <aside class="aside">
-	    <ul>
-	    	{% for cycle in listeCycles %}
-
+	<div class="aside-title">
+	   	Niveaux
+	</div>
+    <ul>
+    	{% for cycle in listeCycles %}
+    		
+    		<div class="cycle">
 	    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'idCycle' : cycle.id }) }}">
-	    			<li class="cycle">{{cycle.nomCycle}}</li>
-	    		</a>
-	    		
-		    		{% for niveau in listeNiveaux %}
+		    		<li>{{cycle.nomCycle}}</li>
+		    	</a>
+		    </div>
 
-		    			{% if niveau.cycle.id == cycle.id %} 
+	    		{% for niveau in listeNiveaux %}
 
-		    				<div class="level-name">
-		    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
+	    			{% if niveau.cycle.id == cycle.id %} 
+
+	    				<div class="level-name">
+	    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
 		    						{{niveau.nomNiveau}}
-		    					</a>
-		    				</div>
+		    				</a>
+		    			</div>
 
-		    			{% endif %}
+	    			{% endif %}
 
-		    		{% endfor %}
-	    		
-	    		<br><br>
+	    		{% endfor %}
+    		
+    		<br><br>
 
-	    	{% endfor %}
-	    </ul>
+    	{% endfor %}
+    </ul>
 </aside>
