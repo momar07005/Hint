@@ -23,7 +23,9 @@ class SubjectsLevelsController extends Controller
         {
         	$listeMatieres = $em->getRepository("NKHintBundle:Matiere")
                                 ->obtenirListeMatieres($idNiveau);
-            $array = array('listeMatieres' => $listeMatieres);
+            $niveau=$em->getRepository("NKHintBundle:Niveau")
+            		   ->find($idNiveau);
+            $array = array('listeMatieres' => $listeMatieres, 'niveau' => $niveau);
         } 
 
 	   return $this->render('NKHintBundle:subjects_levels:subjectsPerLevel.html.twig', 

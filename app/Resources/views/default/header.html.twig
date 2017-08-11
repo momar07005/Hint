@@ -15,15 +15,6 @@
 	
 	<span class="">
 		<a href="#">ACCES NIVEAUX</a>
-		<ul>
-			{% for niveau in listeNiveaux %}
-                <li><a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau': niveau.id }) }}">{{niveau.nomNiveau}}</a></li>
-            {% endfor %}
-		</ul>
 	</span>
 	<input type="search" name="searchBar" placeholder="  Search">
-</div>
-
-<div class="row" id="sub-header">
-	
 </div>

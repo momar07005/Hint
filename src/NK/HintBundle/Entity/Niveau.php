@@ -28,6 +28,13 @@ class Niveau
      */
     private $nomNiveau;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="couleurNiveau", type="string", length=255)
+     */
+    private $couleurNiveau;
+
     /** 
      * @ORM\ManyToOne(targetEntity="Cycle", inversedBy="niveaux")
     */
@@ -76,6 +83,30 @@ class Niveau
     public function getNomNiveau()
     {
         return $this->nomNiveau;
+    }
+
+    /**
+     * Set couleurNiveau
+     *
+     * @param string $couleurNiveau
+     *
+     * @return Niveau
+     */
+    public function setCouleurNiveau($couleurNiveau)
+    {
+        $this->couleurNiveau = $couleurNiveau;
+
+        return $this;
+    }
+
+    /**
+     * Get couleurNiveau
+     *
+     * @return string
+     */
+    public function getCouleurNiveau()
+    {
+        return $this->couleurNiveau;
     }
     
     /**

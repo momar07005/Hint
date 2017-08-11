@@ -4,7 +4,6 @@
 	</div>
     <ul>
     	{% for cycle in listeCycles %}
-    		
     		<div class="cycle">
 	    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'idCycle' : cycle.id }) }}">
 		    		<li>{{cycle.nomCycle}}</li>
@@ -12,21 +11,15 @@
 		    </div>
 
 	    		{% for niveau in listeNiveaux %}
-
 	    			{% if niveau.cycle.id == cycle.id %} 
-
-	    				<div class="level-name">
+	    				<div class="level-name" style="border-left-color:{{niveau.couleurNiveau}}">
 	    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
 		    						{{niveau.nomNiveau}}
 		    				</a>
 		    			</div>
-
 	    			{% endif %}
-
 	    		{% endfor %}
-    		
     		<br><br>
-
     	{% endfor %}
     </ul>
 </aside>

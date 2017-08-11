@@ -18,6 +18,10 @@
         <header class="row">
             {{ render(controller("NKHintBundle:Header:header")) }}
         </header>
+        {% block sub_header %}
+        	<div class="row" id="sub-header">
+			</div>
+        {% endblock sub_header %}
 
         {% block content %}
         {% endblock content %}
