@@ -1,11 +1,64 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 {% block NKHintBundle_content %}
 	<div class="row">
-		<div class="col-sm-offset-1 col-sm-2">
-			sd:fgkfgksfgfs
+		<div class="col-sm-offset-1 col-sm-3">
+			<div style="margin-top:30px;">
+	            <div id="section-document">
+	                <a id="section1" data-toggle="collapse" href="#document"><span id="partie1" class="glyphicon glyphicon-folder-close"></span> Documents</a>
+	                <ul id="document" class="collapse">
+	                    <li>
+	                    	<a data-toggle="collapse" href="#sousdocument1"><span id="partie2" class="glyphicon glyphicon-folder-close"></span> Cours</a>
+	                    	<ul id="sousdocument1" class="collapse">
+	                    		{% for document in documents|sort %}
+	                    			{% if document.category.nomCategory == "Cours" %}
+	                    				<li><a href="">{{document.nomDocument}}</a></li>
+	                    			{% endif %}
+	                    		{% endfor %}
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	<a data-toggle="collapse" href="#sousdocument2"><span id="partie3" class="glyphicon glyphicon-folder-close"></span> Exercices</a>
+	                        <ul id="sousdocument2" class="collapse">
+	                            {% for document in documents|sort %}
+	                    			{% if document.category.nomCategory == "Exercice" %}
+	                    				<li><a href="">{{document.nomDocument}}</a></li>
+	                    			{% endif %}
+	                    		{% endfor %}
+	                        </ul>
+	                    </li>
+	                 </ul>
+	            </div>
+	        </div>
 		</div>
 		<div class="col-sm-7" style="height: 950px;">
 			<embed src="test.pdf" width="100%" height="100%" />
 		</div>
 	</div>
+
 {% endblock NKHintBundle_content %}
+{% block javascripts %}
+	<script>	
+		$(function(){
+			$('#document').on('shown.bs.collapse', function() {
+    			$("#partie1").addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
+  			});
+  			$('#document').on('hidden.bs.collapse', function() {
+    			$("#partie1").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
+  			});
+  			$('#sousdocument1').on('shown.bs.collapse', function() {
+    			$("#partie2").addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
+  			});
+  			$('#sousdocument1').on('hidden.bs.collapse', function() {
+    			$("#partie2").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
+  			});
+  			$('#sousdocument2').on('shown.bs.collapse', function() {
+    			$("#partie3").addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
+  			});
+  			$('#sousdocument2').on('hidden.bs.collapse', function() {
+    			$("#partie3").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
+  			});
+  			
+		});
+	</script>
+
+{% endblock javascripts %}

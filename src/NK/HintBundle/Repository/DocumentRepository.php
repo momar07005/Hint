@@ -10,4 +10,15 @@ namespace NK\HintBundle\Repository;
  */
 class DocumentRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function obtenirDocumentsPourUneMatiere($nomMatiere, $nomNiveau)
+	{
+		$qb = $this->createQueryBuilder('a')
+				->Join('a.matiere', 'b', 'WITH', 'b.nomMatiere = :nomMatiere')
+				->addSelect('b')
+				->Join('b.niveau', 'c', 'WITH', 'c.nomNiveau = :nomNiveau')
+				->addSelect('c')
+				->setParameters(array('nomMatiere' => $nomMatiere, 'nomNiveau' => $nomNiveau));
+		return $qb->getQuery()
+				->getResult();
+	}
 }

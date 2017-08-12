@@ -9,9 +9,15 @@ use NK\HintBundle\Form\DocumentType;
 
 class DocumentController extends Controller
 {
-    public function coursexosAction()
+    public function coursexosAction($nomNiveau, $nomMatiere)
     {
-        return $this->render('NKHintBundle:Document:cours_exercices.html.twig');
+    	$em= $this->getDoctrine()
+                    ->getManager();
+        $documents = $em->getRepository("NKHintBundle:Document")
+                    	->obtenirDocumentsPourUneMatiere($nomMatiere, $nomNiveau);
+        
+        return $this->render('NKHintBundle:Document:cours_exercices.html.twig',
+        	array('documents' => $documents,));
     }
     public function ajouterdocAction(Request $request)
     {

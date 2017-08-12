@@ -5,12 +5,14 @@ namespace NK\HintBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Document
  *
  * @ORM\Table(name="document")
  * @ORM\Entity(repositoryClass="NK\HintBundle\Repository\DocumentRepository")
+ * @Vich\Uploadable
  */
 class Document
 {
@@ -26,12 +28,19 @@ class Document
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
+     * @ORM\Column(name="nomDocument", type="string", length=255)
      */
     private $nomDocument;
 
     /**
-     * @Vich\UploadableField(mapping="document_pdf", fileNameProperty="nom")
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @Vich\UploadableField(mapping="document_pdf", fileNameProperty="name")
      * @var File
      */
     private $pdf;
@@ -51,19 +60,8 @@ class Document
      * @ORM\ManyToOne(targetEntity="Matiere", inversedBy="documents")
     */
     private $matiere;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-     public function setPdf(File $pdf = null)
+    
+    public function setPdf(File $pdf = null)
     {
         $this->pdf = $pdf;
         // VERY IMPORTANT:
@@ -74,36 +72,23 @@ class Document
             $this->updatedAt = new \DateTime('now');
         }
     }
+    /**
+     * @return File|null
+    */
     public function getPdf()
     {
         return $this->pdf;
     }
 
     /**
-     * Set nomDocument
+     * Get id
      *
-     * @param string $nomDocument
-     *
-     * @return Document
+     * @return int
      */
-    public function setNomDocument($nomDocument)
+    public function getId()
     {
-        $this->nomDocument = $nomDocument;
-
-        return $this;
+        return $this->id;
     }
-
-    /**
-     * Get nomDocument
-     *
-     * @return string
-     */
-    public function getNomDocument()
-    {
-        return $this->nomDocument;
-    }
-
-   
 
     /**
      * Set category
@@ -175,5 +160,53 @@ class Document
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Document
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set nomDocument
+     *
+     * @param string $nomDocument
+     *
+     * @return Document
+     */
+    public function setNomDocument($nomDocument)
+    {
+        $this->nomDocument = $nomDocument;
+
+        return $this;
+    }
+
+    /**
+     * Get nomDocument
+     *
+     * @return string
+     */
+    public function getNomDocument()
+    {
+        return $this->nomDocument;
     }
 }

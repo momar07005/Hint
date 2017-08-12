@@ -282,3 +282,6 @@
 	}
 
 }
+#section-document ul li{
+	list-style: none;
+}
