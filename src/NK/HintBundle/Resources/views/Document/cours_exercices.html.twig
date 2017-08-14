@@ -11,17 +11,18 @@
 	                    	<ul id="sousdocument1" class="collapse">
 	                    		{% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Cours" %}
-	                    				<li><a href="">{{document.nomDocument}}</a></li>
+	                    				<li><a href="" onclick= "chargerpdf(this.value)">{{document.nomDocument}}</a></li>
 	                    			{% endif %}
 	                    		{% endfor %}
 	                    	</ul>
 	                    </li>
 	                    <li>
 	                    	<a data-toggle="collapse" href="#sousdocument2"><span id="partie3" class="glyphicon glyphicon-folder-close"></span> Exercices</a>
-	                        <ul id="sousdocument2" class="collapse">
+	                        <ul id="sousdocument2" >
 	                            {% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Exercice" %}
-	                    				<li><a href="">{{document.nomDocument}}</a></li>
+	                    				<li>
+	                    					<button onclick= "chargerpdf(this.value)">{{document.nomDocument}}</button></li>
 	                    			{% endif %}
 	                    		{% endfor %}
 	                        </ul>
@@ -30,8 +31,8 @@
 	            </div>
 	        </div>
 		</div>
-		<div class="col-sm-7" style="height: 950px;">
-			<embed src="test.pdf" width="100%" height="100%" />
+		<div class="col-sm-7" style="height: 950px;" id="affiche-pdf">
+			qsdqsdlqsdqsd
 		</div>
 	</div>
 
@@ -56,9 +57,20 @@
   			});
   			$('#sousdocument2').on('hidden.bs.collapse', function() {
     			$("#partie3").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
-  			});
-  			
+  			});  			
 		});
+
+		function chargerpdf(nomDocument){
+			xmlhttp= new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function(){
+				if(this.readystate==4 && (this.status == 200)){
+					document.getElementById("affiche-pdf").innerHTML =
+            this.responseText;
+				}
+			}
+			xmlhttp.open("GET","{{path('nk_hint_afficherdoc', {'nomDocument': 'cours1'})}}", false);
+			xmlhttp.send();
+		}
 	</script>
 
 {% endblock javascripts %}

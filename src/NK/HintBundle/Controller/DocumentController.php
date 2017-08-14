@@ -4,6 +4,7 @@ namespace NK\HintBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Reponse;
 use NK\HintBundle\Entity\Document;
 use NK\HintBundle\Form\DocumentType;
 
@@ -35,5 +36,14 @@ class DocumentController extends Controller
         }	
     	return $this->render('NKHintBundle:Document:ajouter_document.html.twig',
     		array( 'form' => $form->createView() ));
+    }
+    public function afficherDocumentAction($nomDocument)
+    {
+        $em= $this->getDoctrine()
+                    ->getManager();
+        $document=$em->getRepository("NKHintBundle:Document")
+                     ->obtenirDocumentParNom($nomDocument);
+        return $this->render('NKHintBundle:Document:afficher_document.html.twig',
+            array( 'document' => $document ));
     }
 }

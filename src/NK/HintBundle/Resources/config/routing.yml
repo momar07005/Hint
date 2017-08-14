@@ -9,3 +9,7 @@ nk_hint_coursexos:
 nk_hint_ajouterdoc:
     path:     /ajouter_document
     defaults: { _controller: NKHintBundle:Document:ajouterdoc }
+
+nk_hint_afficherdoc:
+    path:     /afficher_document/{nomDocument}
+    defaults: { _controller: NKHintBundle:Document:afficherDocument }

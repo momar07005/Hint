@@ -21,4 +21,13 @@ class DocumentRepository extends \Doctrine\ORM\EntityRepository
 		return $qb->getQuery()
 				->getResult();
 	}
+
+	public function obtenirDocumentParNom($nomDocument)
+	{
+		$qb = $this->createQueryBuilder('a')
+				   ->where('a.nomDocument = :nomDocument')
+				   ->setParameters(array('nomDocument' => $nomDocument));
+		return $qb->getQuery()
+				  ->getResult();
+	}
 }

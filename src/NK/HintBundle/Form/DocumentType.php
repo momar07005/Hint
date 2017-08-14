@@ -17,6 +17,7 @@ class DocumentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('pdf', FileType::class)
+                ->add('nomDocument')
             ->add('category',  EntityType::class, array(
                 'class'=> 'NKHintBundle:Category',
                 'choice_label' => 'nomCategory',
