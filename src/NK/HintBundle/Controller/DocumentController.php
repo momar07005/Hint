@@ -37,12 +37,12 @@ class DocumentController extends Controller
     	return $this->render('NKHintBundle:Document:ajouter_document.html.twig',
     		array( 'form' => $form->createView() ));
     }
-    public function afficherDocumentAction($nomDocument)
+    public function afficherDocumentAction($idDocument)
     {
         $em= $this->getDoctrine()
                     ->getManager();
         $document=$em->getRepository("NKHintBundle:Document")
-                     ->obtenirDocumentParNom($nomDocument);
+                     ->find($idDocument);
         return $this->render('NKHintBundle:Document:afficher_document.html.twig',
             array( 'document' => $document ));
     }

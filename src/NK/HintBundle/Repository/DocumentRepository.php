@@ -26,7 +26,7 @@ class DocumentRepository extends \Doctrine\ORM\EntityRepository
 	{
 		$qb = $this->createQueryBuilder('a')
 				   ->where('a.nomDocument = :nomDocument')
-				   ->setParameters(array('nomDocument' => $nomDocument));
+				   ->setParameter('nomDocument', $nomDocument);
 		return $qb->getQuery()
 				  ->getResult();
 	}

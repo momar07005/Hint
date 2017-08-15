@@ -11,7 +11,10 @@
 	                    	<ul id="sousdocument1" class="collapse">
 	                    		{% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Cours" %}
-	                    				<li><a href="" onclick= "chargerpdf(this.value)">{{document.nomDocument}}</a></li>
+	                    				<li>
+	                    					<button class="document-button" onclick= "chargerpdf({{document.id}})">{{document.nomDocument}}</button>
+	                    				</li>
+	                    				<br>
 	                    			{% endif %}
 	                    		{% endfor %}
 	                    	</ul>
@@ -22,7 +25,9 @@
 	                            {% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Exercice" %}
 	                    				<li>
-	                    					<button onclick= "chargerpdf(this.value)">{{document.nomDocument}}</button></li>
+	                    					<button onclick= "chargerpdf({{document.id}})" class="document-button">{{document.nomDocument}}</button>
+	                    				</li>
+	                    				<br>
 	                    			{% endif %}
 	                    		{% endfor %}
 	                        </ul>
@@ -60,15 +65,17 @@
   			});  			
 		});
 
-		function chargerpdf(nomDocument){
+		function chargerpdf(idDocument){
+			var url = "{{ path('nk_hint_afficherdoc', {'idDocument': 'exemple'}) }}";
+                url = url.replace("exemple", idDocument);
 			xmlhttp= new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function(){
-				if(this.readystate==4 && (this.status == 200)){
+				if(this.readyState==4 && (this.status == 200)){
 					document.getElementById("affiche-pdf").innerHTML =
             this.responseText;
 				}
 			}
-			xmlhttp.open("GET","{{path('nk_hint_afficherdoc', {'nomDocument': 'cours1'})}}", false);
+			xmlhttp.open("GET",url, true);
 			xmlhttp.send();
 		}
 	</script>

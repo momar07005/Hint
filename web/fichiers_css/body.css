@@ -236,6 +236,9 @@
 .document-name{
 	color: green;
 }
+.document-button{
+	border: none;
+}
 
 
 @media (max-width: 748px){
