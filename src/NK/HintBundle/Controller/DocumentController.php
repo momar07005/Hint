@@ -16,9 +16,10 @@ class DocumentController extends Controller
                     ->getManager();
         $documents = $em->getRepository("NKHintBundle:Document")
                     	->obtenirDocumentsPourUneMatiere($nomMatiere, $nomNiveau);
-        
+        $niveau = $em->getRepository('NKHintBundle:Niveau')
+                     ->findOneBy( array('nomNiveau' => $nomNiveau));
         return $this->render('NKHintBundle:Document:cours_exercices.html.twig',
-        	array('documents' => $documents,));
+        	array('documents' => $documents, 'niveau' => $niveau));
     }
     public function ajouterdocAction(Request $request)
     {

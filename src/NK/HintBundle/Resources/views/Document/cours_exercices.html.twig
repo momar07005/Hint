@@ -1,4 +1,11 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
+
+	{% block sub_header %}
+        	<div class="row" id="sub-header" style="background-color:{{niveau.couleurNiveau}}">
+        		<span class="level-name-header">{{niveau.nomNiveau}} </span>
+			</div>
+    {% endblock sub_header %}
+
 {% block NKHintBundle_content %}
 	<div class="row">
 		<div class="col-sm-offset-1 col-sm-3">
@@ -37,7 +44,7 @@
 	        </div>
 		</div>
 		<div class="col-sm-7" style="height: 950px;" id="affiche-pdf">
-			qsdqsdlqsdqsd
+			
 		</div>
 	</div>
 

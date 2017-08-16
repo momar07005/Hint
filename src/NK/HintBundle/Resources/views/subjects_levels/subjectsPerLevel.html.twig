@@ -1,9 +1,9 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 
-{% if niveau is defined %}
+{% if nomCycle is defined %}
 	{% block sub_header %}
-        	<div class="row" id="sub-header" style="background-color:{{niveau.couleurNiveau}}">
-        		<span class="level-name-header">{{niveau.nomNiveau}} </span>
+        	<div class="row" id="sub-header" style="background-color:{{couleurNiveau}}">
+        		<span class="level-name-header">{{nomNiveau}}{{nomCycle}} </span>
 			</div>
     {% endblock sub_header %}
 {% endif %}
@@ -34,7 +34,7 @@
 			<div class="level-container">
 				{% for niveau in listeNiveaux %}
 					<div class="level-name">
-			    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'idNiveau' : niveau.id }) }}">
+			    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}">
 			    			{{niveau.nomNiveau}}
 			    		</a>
 			    	</div>

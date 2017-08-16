@@ -11,10 +11,10 @@ footer{
 }
 
 #logo{
-	height: 100px;
+	height: 115px;
 	margin-bottom: 25px;
 	margin-top: 22px;
-	background-color: blue;
+	background: transparent url('../logo.jpg') scroll no-repeat center center;
 	width: 24.999999999%;
 	margin-left: 8.333333%;
 	margin-right: 25%;
