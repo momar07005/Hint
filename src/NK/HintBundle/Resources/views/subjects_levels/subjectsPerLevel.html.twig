@@ -11,22 +11,16 @@
 	<div class="main-container">
 		{% if listeMatieres is defined %}  
 			<div class="card-container">
-				{% for matiere in listeMatieres %}
-					<a href="{{ path('nk_hint_coursexos', { 'nomNiveau': matiere.niveau.nomNiveau, 'nomMatiere': matiere.nomMatiere}) }}">
-						<div class="subject-card">
-							<div class="subject-title">
-								{{matiere.nomMatiere}}
-							</div>
-							<img src="{{asset('subject_icons/mathsIcon.jpg')}}" alt="Mathématiques" class="subject-img"> 
-							<div class="subject-inf">
-								Et là les informations sur la matière
-							</div>
+				{% for matiere in listeMatieres|sort %}
+					<a href="{{ path('nk_hint_coursexos', { 'nomNiveau': matiere.niveau.nomNiveau, 'nomMatiere': matiere.nomMatiere}) }}" class="subject-link">
+						<div class="subject-card" style="background: transparent url({{asset('subject_icons/'~matiere.nomMatiere|replace({'é':'e'})|replace({'è':'e'})|replace({' ':''})|replace({'ê':'e'})|lower~'.png')}}) scroll no-repeat center center;">
 						</div>
+						<span class="subject-title">
+								{{matiere.nomMatiere}}
+						</span>	
 					</a>
 				{% endfor %}
 			</div>
-
-			
 		{% endif %}
 		{% if listeNiveaux is defined %}
 			<div class="level-container">
