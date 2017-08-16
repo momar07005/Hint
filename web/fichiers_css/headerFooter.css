@@ -14,7 +14,7 @@ footer{
 	height: 115px;
 	margin-bottom: 25px;
 	margin-top: 22px;
-	background: transparent url('../logo.jpg') scroll no-repeat center center;
+	background: transparent url('../logo.png') scroll no-repeat center center;
 	width: 24.999999999%;
 	margin-left: 8.333333%;
 	margin-right: 25%;
@@ -65,7 +65,7 @@ header div input{
 
 header div input:focus{
 	border-radius: 15px;
-	min-width: 50%;
+	min-width: 20%;
 	margin-left: 5%;
 	
 }
@@ -246,6 +246,13 @@ header div input:focus{
 }
 #footer-container-socialWidget .footer-social ul li a:hover {
 	transform: rotate(25deg);
+}
+#logo-footer{
+	background: transparent url('../logo_footer.png') scroll no-repeat center center;
+	height: 125px;
+	width: 220px;
+	margin-left: 60px;
+	margin-right: 10px;
 }
 .youtube {
 	background: transparent url('../social-photos/youtube_white.png') scroll no-repeat center center;

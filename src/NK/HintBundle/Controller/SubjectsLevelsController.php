@@ -8,7 +8,7 @@ use NK\HintBundle\Entity\Niveau;
 
 class SubjectsLevelsController extends Controller
 {
-    public function subjectsAction($nomCycle,$nomNiveau, $idMatiere)
+    public function subjectsAction($nomNiveau, $idMatiere)
     {  
         $em = $this->getDoctrine()
                    ->getManager();
