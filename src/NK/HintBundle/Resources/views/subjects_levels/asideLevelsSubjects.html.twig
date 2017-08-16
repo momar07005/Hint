@@ -5,9 +5,7 @@
     <ul>
     	{% for cycle in listeCycles %}
     		<div class="cycle">
-	    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomCycle' : cycle.nomCycle }) }}">
 		    		<li>{{cycle.nomCycle}}</li>
-		    	</a>
 		    </div>
 
 	    		{% for niveau in listeNiveaux %}

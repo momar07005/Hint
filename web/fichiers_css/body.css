@@ -210,14 +210,13 @@
 	width: 63%;
 	margin-bottom: 15px;
 }
+
 .cycle{
-	margin-bottom: 15px;
-}
-.cycle a, .cycle a:hover{
 	font-size: 20px;
 	font-weight: bold;
 	color: black;
 	text-decoration: underline;
+	margin-bottom: 15px;
 }
 
 .level-name{

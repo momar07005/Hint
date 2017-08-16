@@ -1,12 +1,10 @@
 {% extends 'NKHintBundle::layout.html.twig' %}
 
-{% if nomCycle is defined %}
 	{% block sub_header %}
         	<div class="row" id="sub-header" style="background-color:{{couleurNiveau}}">
-        		<span class="level-name-header">{{nomNiveau}}{{nomCycle}} </span>
+        		<span class="level-name-header">{{nomNiveau}}</span>
 			</div>
     {% endblock sub_header %}
-{% endif %}
 
 {% block content %}
 {% block NKHintBundle_content %}
