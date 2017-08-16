@@ -2,7 +2,7 @@
 
 	{% block sub_header %}
         	<div class="row" id="sub-header" style="background-color:{{niveau.couleurNiveau}}">
-        		<span class="level-name-header">{{niveau.nomNiveau}} </span>
+        		<span class="level-name-header">{{niveau.nomNiveau}} - {{nomMatiere}}</span>
 			</div>
     {% endblock sub_header %}
 
@@ -28,7 +28,7 @@
 	                    </li>
 	                    <li>
 	                    	<a data-toggle="collapse" href="#sousdocument2"><span id="partie3" class="glyphicon glyphicon-folder-close"></span> Exercices</a>
-	                        <ul id="sousdocument2" >
+	                        <ul id="sousdocument2" class="collapse">
 	                            {% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Exercice" %}
 	                    				<li>
@@ -44,7 +44,6 @@
 	        </div>
 		</div>
 		<div class="col-sm-7" style="height: 950px;" id="affiche-pdf">
-			
 		</div>
 	</div>
 

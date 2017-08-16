@@ -1,11 +1,10 @@
 {% extends "@FOSUser/layout.html.twig" %}
-
+{% block sub_header %}
+        <div class="row" id="sub-header" style="margin-bottom: 40px;">
+            <h1 class="title">S'inscrire</h1>
+        </div>
+{% endblock sub_header %}
 {% block fos_user_content %}
-	<div class="row under-header">
-		<div class="container">
-			<h1 class="title">S'inscrire</h1>
-		</div>
-	</div>
 	{% include "@FOSUser/Registration/register_content.html.twig" %}
 	<script>
 	    $(function() {
