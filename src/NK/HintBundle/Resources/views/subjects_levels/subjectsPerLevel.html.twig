@@ -22,17 +22,6 @@
 				{% endfor %}
 			</div>
 		{% endif %}
-		{% if listeNiveaux is defined %}
-			<div class="level-container">
-				{% for niveau in listeNiveaux %}
-					<div class="level-name">
-			    		<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}">
-			    			{{niveau.nomNiveau}}
-			    		</a>
-			    	</div>
-				{% endfor %}
-			</div>
-		{% endif %}
 		{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
 	</div>
 {% endblock NKHintBundle_content %}

@@ -32,7 +32,7 @@
 	                            {% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Exercice" %}
 	                    				<li>
-	                    					<button onclick= "chargerpdf({{document.id}})" class="document-button">{{document.nomDocument}}</button>
+	                    					<button onclick="chargerpdf({{document.id}})" class="document-button">{{document.nomDocument}}</button>
 	                    				</li>
 	                    				<br>
 	                    			{% endif %}
@@ -76,9 +76,8 @@
                 url = url.replace("exemple", idDocument);
 			xmlhttp= new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function(){
-				if(this.readyState==4 && (this.status == 200)){
-					document.getElementById("affiche-pdf").innerHTML =
-            this.responseText;
+				if(this.readyState == 4 && (this.status == 200)){
+					document.getElementById("affiche-pdf").innerHTML = this.responseText;
 				}
 			}
 			xmlhttp.open("GET",url, true);

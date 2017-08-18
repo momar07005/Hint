@@ -42,8 +42,8 @@ class DocumentController extends Controller
     {
         $em= $this->getDoctrine()
                     ->getManager();
-        $document=$em->getRepository("NKHintBundle:Document")
-                     ->find($idDocument);
+        $document = $em->getRepository("NKHintBundle:Document")
+        				->find($idDocument);
         return $this->render('NKHintBundle:Document:afficher_document.html.twig',
             array( 'document' => $document ));
     }

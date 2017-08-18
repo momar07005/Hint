@@ -37,6 +37,7 @@ class Niveau
 
     /** 
      * @ORM\ManyToOne(targetEntity="Cycle", inversedBy="niveaux")
+     * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
     */
     private $cycle;
 
@@ -44,11 +45,6 @@ class Niveau
      * @ORM\OneToMany(targetEntity="Matiere", mappedBy="niveau")
     */
     private $matieres;
-
-    /** 
-     * @ORM\OneToMany(targetEntity="SousNiveau", mappedBy="niveau")
-    */
-    private $sousNiveaux;
 
 
     /**
@@ -174,39 +170,5 @@ class Niveau
     public function getMatieres()
     {
         return $this->matieres;
-    }
-
-    /**
-     * Add sousNiveaux
-     *
-     * @param \NK\HintBundle\Entity\SousNiveau $sousNiveaux
-     *
-     * @return Niveau
-     */
-    public function addSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
-    {
-        $this->sousNiveaux[] = $sousNiveaux;
-    
-        return $this;
-    }
-
-    /**
-     * Remove sousNiveaux
-     *
-     * @param \NK\HintBundle\Entity\SousNiveau $sousNiveaux
-     */
-    public function removeSousNiveaux(\NK\HintBundle\Entity\SousNiveau $sousNiveaux)
-    {
-        $this->sousNiveaux->removeElement($sousNiveaux);
-    }
-
-    /**
-     * Get sousNiveaux
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSousNiveaux()
-    {
-        return $this->sousNiveaux;
     }
 }

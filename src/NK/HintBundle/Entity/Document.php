@@ -53,11 +53,13 @@ class Document
 
     /** 
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="documents")
+     * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
     */
     private $category;
 
     /** 
      * @ORM\ManyToOne(targetEntity="Matiere", inversedBy="documents")
+     * @ORM\JoinColumn(referencedColumnName="id", onDelete="CASCADE")
     */
     private $matiere;
     
