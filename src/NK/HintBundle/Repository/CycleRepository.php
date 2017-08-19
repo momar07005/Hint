@@ -10,4 +10,11 @@ namespace NK\HintBundle\Repository;
  */
 class CycleRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function obtenirListeCycles()
+	{
+		$qb = $this->createQueryBuilder('a')
+				   ->orderBy('a.id');
+		return $qb->getQuery()
+				  ->getResult();
+	}
 }

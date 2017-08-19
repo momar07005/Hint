@@ -1,6 +1,10 @@
 <aside class="aside">
+	<div id="menu-responsive">
+		<i class="fa fa-bars fa-2x" aria-hidden="true" style="margin-right:8px;"></i>Menu
+	</div>
+		<i class="fa fa-times-circle fa-3x" aria-hidden="true" id="close-icon"></i>
 	<div class="aside-title">
-	   	Niveaux
+	   	Niveaux 
 	</div>
     <ul>
     	{% for cycle in listeCycles %}
@@ -10,11 +14,11 @@
 
 	    		{% for niveau in listeNiveaux %}
 	    			{% if niveau.cycle.id == cycle.id %} 
-	    				<div class="level-name" style="border-left-color:{{niveau.couleurNiveau}}">
-	    					<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}">
-		    						{{niveau.nomNiveau}}
-		    				</a>
-		    			</div>
+	    				<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}" class="level-name-link">
+		    				<div class="level-name" style="border-left-color:{{niveau.couleurNiveau}}">
+			    				{{niveau.nomNiveau}}	
+			    			</div>
+		    			</a>
 	    			{% endif %}
 	    		{% endfor %}
     	

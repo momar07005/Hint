@@ -49,11 +49,11 @@ header div span a, header div span a:hover, header div span a:focus{
 
 header div input{
 	border-radius: 15px; 
+	border-color: black !important;
 	height: 30px;
 	min-width: 50px; 
 	max-width: 8%;
 	transition: min-width 1s;
-	border-color:black;	
 	margin-top: 50px;
 	margin-bottom: 50px;
 	position: absolute;
@@ -114,6 +114,11 @@ header div input:focus{
 
 }
 
+@media (max-width: 748px){
+	header{
+		margin-top: 40px;
+	}
+}
 
 @media (max-width: 730px) and (min-width: 550px){
 	#main-header{

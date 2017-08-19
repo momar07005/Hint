@@ -15,7 +15,7 @@ class AsideController extends Controller
         $listeNiveaux = $em->getRepository("NKHintBundle:Niveau")
                         ->findAll();
          $listeCycles = $em->getRepository("NKHintBundle:Cycle")
-                        ->findAll();
+                        ->obtenirListeCycles();
         return $this->render('NKHintBundle:subjects_levels:asideLevelsSubjects.html.twig', array('listeNiveaux' => $listeNiveaux, 'listeCycles' => $listeCycles));
     }
 }
