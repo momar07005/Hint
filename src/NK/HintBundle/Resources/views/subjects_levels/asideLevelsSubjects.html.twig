@@ -9,9 +9,9 @@
     <ul>
     	{% for cycle in listeCycles %}
     		<div class="cycle">
-		    		<li>{{cycle.nomCycle}}</li>
+		    	<li data-toggle="collapse" href="#niveau{{cycle.id}}"><a href="#">{{cycle.nomCycle}}</a></li>
 		    </div>
-
+		    <div class="collapse" id="niveau{{cycle.id}}">
 	    		{% for niveau in listeNiveaux %}
 	    			{% if niveau.cycle.id == cycle.id %} 
 	    				<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}" class="level-name-link">
@@ -21,7 +21,7 @@
 		    			</a>
 	    			{% endif %}
 	    		{% endfor %}
-    	
+	    	</div>
  	   		<br><br>
     	{% endfor %}
     </ul>

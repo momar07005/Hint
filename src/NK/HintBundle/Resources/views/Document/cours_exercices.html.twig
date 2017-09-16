@@ -11,8 +11,8 @@
 		<div class="col-sm-offset-1 col-sm-3">
 			<div style="margin-top:30px;">
 	            <div id="section-document">
-	                <a id="section1" data-toggle="collapse" href="#document"><span id="partie1" class="glyphicon glyphicon-folder-close"></span> Documents</a>
-	                <ul id="document" class="collapse">
+	                <a id="section1" href="#"><span id="partie1" class="glyphicon glyphicon-folder-open"></span> Documents</a>
+	                <ul id="document">
 	                    <li>
 	                    	<a data-toggle="collapse" href="#sousdocument1"><span id="partie2" class="glyphicon glyphicon-folder-close"></span> Cours</a>
 	                    	<ul id="sousdocument1" class="collapse">
@@ -44,6 +44,7 @@
 	        </div>
 		</div>
 		<div class="col-sm-7" style="height: 950px;" id="affiche-pdf">
+			<p id="loader" style="margin-top: 150px; margin-left: 150px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>
 		</div>
 	</div>
 
@@ -51,12 +52,6 @@
 {% block javascripts %}
 	<script>	
 		$(function(){
-			$('#document').on('shown.bs.collapse', function() {
-    			$("#partie1").addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
-  			});
-  			$('#document').on('hidden.bs.collapse', function() {
-    			$("#partie1").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
-  			});
   			$('#sousdocument1').on('shown.bs.collapse', function() {
     			$("#partie2").addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
   			});
@@ -68,18 +63,23 @@
   			});
   			$('#sousdocument2').on('hidden.bs.collapse', function() {
     			$("#partie3").addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
-  			});  			
+  			});
+  			$("#loader").hide();			
 		});
+		function une() {
+			
+		}
 
 		function chargerpdf(idDocument){
-			var url = "{{ path('nk_hint_afficherdoc', {'idDocument': 'exemple'}) }}";
-                url = url.replace("exemple", idDocument);
 			xmlhttp= new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function(){
 				if(this.readyState == 4 && (this.status == 200)){
 					document.getElementById("affiche-pdf").innerHTML = this.responseText;
 				}
 			}
+			var url = "{{ path('nk_hint_afficherdoc', {'idDocument': 'exemple'}) }}";
+            url = url.replace("exemple", idDocument);
+            $("#loader").show();
 			xmlhttp.open("GET",url, true);
 			xmlhttp.send();
 		}

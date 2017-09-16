@@ -17,12 +17,12 @@
     </head>
     <body class="container-fluid">
         <header class="row">
-            {{ render(controller("NKHintBundle:Header:header")) }}
+            {% include 'default/header.html.twig' %}
+            {% block sub_header %}
+                <div class="row" id="sub-header">
+                </div>
+            {% endblock sub_header %}
         </header>
-        {% block sub_header %}
-        	<div class="row" id="sub-header">
-			</div>
-        {% endblock sub_header %}
 
         {% block content %}
         {% endblock content %}
