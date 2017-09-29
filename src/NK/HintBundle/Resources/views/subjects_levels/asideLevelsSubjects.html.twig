@@ -1,28 +1,24 @@
-<aside class="aside">
-	<div id="menu-responsive">
-		<i class="fa fa-bars fa-2x" aria-hidden="true" style="margin-right:8px;"></i>Menu
-	</div>
-		<i class="fa fa-times-circle fa-3x" aria-hidden="true" id="close-icon"></i>
+<aside>
 	<div class="aside-title">
 	   	Niveaux 
 	</div>
     <ul>
     	{% for cycle in listeCycles %}
-    		<div class="cycle">
-		    	<li data-toggle="collapse" href="#niveau{{cycle.id}}"><a href="#">{{cycle.nomCycle}}</a></li>
+    		<div class="cycle" data-target=".t{{cycle.id}}" data-toggle="collapse">
+		    	<li>{{cycle.nomCycle}}</li>
 		    </div>
-		    <div class="collapse" id="niveau{{cycle.id}}">
+		    <div class="collapse t{{cycle.id}}">
 	    		{% for niveau in listeNiveaux %}
 	    			{% if niveau.cycle.id == cycle.id %} 
 	    				<a href="{{ path('nk_hint_subjectsPerLevel', { 'nomNiveau' : niveau.nomNiveau }) }}" class="level-name-link">
-		    				<div class="level-name" style="border-left-color:{{niveau.couleurNiveau}}">
+		    				<div class="level-name" style="border-left-color:{{niveau.couleurNiveau}}" onmouseover="this.style.backgroundColor='{{niveau.couleurNiveau}}'" onmouseout="this.style.backgroundColor=''">
 			    				{{niveau.nomNiveau}}	
 			    			</div>
 		    			</a>
 	    			{% endif %}
 	    		{% endfor %}
 	    	</div>
- 	   		<br><br>
+ 	  
     	{% endfor %}
     </ul>
 </aside>

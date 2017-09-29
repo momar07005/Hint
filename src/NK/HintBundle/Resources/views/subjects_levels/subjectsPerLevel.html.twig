@@ -21,8 +21,10 @@
 					</a>
 				{% endfor %}
 			</div>
-		{% endif %}		
-		{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
+		{% endif %}	
+		<div class="aside">	
+			{{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
+		</div>
 	</div>
 {% endblock NKHintBundle_content %}
 {% endblock %}

@@ -50,6 +50,7 @@
 
 {% endblock NKHintBundle_content %}
 {% block javascripts %}
+	{{parent()}}
 	<script>	
 		$(function(){
   			$('#sousdocument1').on('shown.bs.collapse', function() {

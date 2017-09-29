@@ -8,21 +8,24 @@
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" type="text/css"  href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('fichiers_css/headerFooter.css') }}"/>
+         
+
         <link rel="stylesheet" href="{{ asset('fichiers_css/body.css') }}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-       
         <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        
+
     </head>
     <body class="container-fluid">
         <header class="row">
-            {% include 'default/header.html.twig' %}
-            {% block sub_header %}
-                <div class="row" id="sub-header">
-                </div>
-            {% endblock sub_header %}
+            {{ render(controller("NKHintBundle:Header:header")) }}
         </header>
+        {% block sub_header %}
+        	<div class="row" id="sub-header">
+			</div>
+        {% endblock sub_header %}
 
         {% block content %}
         {% endblock content %}
@@ -32,17 +35,7 @@
         </footer>
 
         {% block javascripts %}
-                <script>
-$(document).ready(function(){
-    $('#menu-responsive').click(function(){
-        $('.aside').css('height','100%').css('overflow-y','scroll');
-    });
-
-     $('#close-icon').click(function(){
-        $('.aside').css('height','40px').css('overflow-y','hidden');
-    });
-});
-</script>
+            
         {% endblock %}    
     </body>
 </html>

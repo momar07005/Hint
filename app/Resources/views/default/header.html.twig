@@ -43,6 +43,15 @@
 			<a id="btn-login" class="btn register" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
 		{% endif %}
 	</div>
+    <div id="responsive-top-menu">
+        <div id="top-menu" data-toggle="collapse" data-target="#top-menu-core" >
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </div>
+        <div id="top-menu-core" class="collapse">
+            {{ render(controller("NKHintBundle:Aside:asideDisplay")) }}
+        </div>
+    </div>
+
 </div>
 <div id="main-header">
 	<a id="logo" href="{{ path('homepage') }}"></a>
