@@ -147,22 +147,20 @@
  max-height:120px;
  min-height:120px;
  max-width:105px;
+ min-width: 105px;
  text-decoration:none;
  display:block;
  text-align:center;
- margin-right: 150px;
  margin-bottom: 100px;
 }
 #sub-header-subject-name {
  font-size:25px;
 }
 .card-container {
- display:flex;
- flex-wrap:wrap;
- justify-content:space-around;
  width:75%;
  padding-top:25px;
  padding-bottom:25px;
+ text-align: center;
 }
 .main-container {
  display:flex;
@@ -188,11 +186,10 @@
  height:100%;
  border-left-style:solid;
  text-align:center;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
+ display:block;
+
 }
+
 .aside {
  width:25%;
 }
@@ -210,6 +207,8 @@ aside ul {
  border-bottom-color:blue;
  width:63%;
  margin-bottom:15px;
+ margin-left: auto;
+ margin-right: auto;
 }
 .cycle {
  font-size:20px;
@@ -230,6 +229,8 @@ aside ul {
  font-weight:bold;
  margin-bottom:5px;
  text-decoration:none;
+ margin-right: auto;
+ margin-left: auto;
 }
 .document-name {
  color:green;
@@ -254,8 +255,8 @@ aside ul {
   width:100%;
   padding-top:10px;
  }
- .subject-link {
-  margin-bottom:100px
+ .subject-link, .subject-link:hover, .subject-link:focus {
+  margin-bottom:130px;
  }
  .document-container {
   width:100%

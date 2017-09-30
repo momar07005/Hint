@@ -10,8 +10,10 @@
 {% block NKHintBundle_content %}
 	<div class="main-container">
 		{% if listeMatieres is defined %}  
-			<div class="card-container">
+			<div class="card-container container-fluid">
+			<div class="row justify-content-center">
 				{% for matiere in listeMatieres|sort %}
+					<div class="col-xs-5 col-xs-offset-1 col-sm-4 col-md-3 col-lg-2 ">
 					<a href="{{ path('nk_hint_coursexos', { 'nomNiveau': matiere.niveau.nomNiveau, 'nomMatiere': matiere.nomMatiere}) }}" class="subject-link">
 						<div class="subject-card" style="background: transparent url({{asset('subject_icons/'~matiere.nomMatiere|replace({'é':'e'})|replace({'è':'e'})|replace({' ':''})|replace({'ê':'e'})|lower~'.png')}}) scroll no-repeat center center;">
 						</div>
@@ -19,7 +21,9 @@
 								{{matiere.nomMatiere}}
 						</span>	
 					</a>
+					</div>
 				{% endfor %}
+			</div>
 			</div>
 		{% endif %}	
 		<div class="aside">	

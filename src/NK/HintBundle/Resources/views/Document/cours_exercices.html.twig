@@ -72,10 +72,15 @@
 		}
 
 		function chargerpdf(idDocument){
+			document.getElementById("affiche-pdf").innerHTML = '<p id="loader" style="margin-top: 150px; margin-left: 300px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>';
 			xmlhttp= new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function(){
 				if(this.readyState == 4 && (this.status == 200)){
 					document.getElementById("affiche-pdf").innerHTML = this.responseText;
+				}else if(this.readyState == 4 && (this.status != 200)){
+					document.getElementById("affiche-pdf").innerHTML= "Veuillez réessayer svp";
+				}else{
+					document.getElementById("affiche-pdf").innerHTML = '<p id="loader" style="margin-top: 150px; margin-left: 300px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>';
 				}
 			}
 			var url = "{{ path('nk_hint_afficherdoc', {'idDocument': 'exemple'}) }}";
