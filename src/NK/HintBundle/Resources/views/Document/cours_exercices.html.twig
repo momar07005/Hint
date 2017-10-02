@@ -8,18 +8,18 @@
 
 {% block NKHintBundle_content %}
 	<div class="row">
-		<div class="col-sm-offset-1 col-sm-3">
+		<div class="col-sm-3">
 			<div style="margin-top:30px;">
 	            <div id="section-document">
-	                <a id="section1" href="#"><span id="partie1" class="glyphicon glyphicon-folder-open"></span> Documents</a>
+	                <a id="section1" style="text-decoration: none; color: black; font-weight:bold; font-size: 17px; margin-bottom: 10px;" href="#"><span id="partie1" class="glyphicon glyphicon-folder-open"></span> Documents</a>
 	                <ul id="document">
 	                    <li>
-	                    	<a data-toggle="collapse" href="#sousdocument1"><span id="partie2" class="glyphicon glyphicon-folder-close"></span> Cours</a>
+	                    	<a data-toggle="collapse" style="text-decoration: none;color: black; font-weight:bold; font-size: 16px;" href="#sousdocument1"><span id="partie2" class="glyphicon glyphicon-folder-close"></span> Cours</a>
 	                    	<ul id="sousdocument1" class="collapse">
 	                    		{% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Cours" %}
 	                    				<li>
-	                    					<button class="document-button" onclick= "chargerpdf({{document.id}})">{{document.nomDocument}}</button>
+	                    					<button class="document-button" onclick= "chargerpdf('{{document.name}}')">{{document.nomDocument}}</button>
 	                    				</li>
 	                    				<br>
 	                    			{% endif %}
@@ -27,12 +27,12 @@
 	                    	</ul>
 	                    </li>
 	                    <li>
-	                    	<a data-toggle="collapse" href="#sousdocument2"><span id="partie3" class="glyphicon glyphicon-folder-close"></span> Exercices</a>
+	                    	<a data-toggle="collapse" href="#sousdocument2" style="text-decoration: none;color: black; font-weight:bold;font-size: 16px;"><span id="partie3" class="glyphicon glyphicon-folder-close"></span> Exercices</a>
 	                        <ul id="sousdocument2" class="collapse">
 	                            {% for document in documents|sort %}
 	                    			{% if document.category.nomCategory == "Exercice" %}
 	                    				<li>
-	                    					<button onclick="chargerpdf({{document.id}})" class="document-button">{{document.nomDocument}}</button>
+	                    					<button onclick="chargerpdf('{{document.name}}')" class="document-button">{{document.nomDocument}}</button>
 	                    				</li>
 	                    				<br>
 	                    			{% endif %}
@@ -43,8 +43,7 @@
 	            </div>
 	        </div>
 		</div>
-		<div class="col-sm-7" style="height: 950px;" id="affiche-pdf">
-			<p id="loader" style="margin-top: 150px; margin-left: 150px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>
+		<div class="col-sm-9" style="height: 950px;" id="affiche-pdf">
 		</div>
 	</div>
 
@@ -71,9 +70,9 @@
 			
 		}
 
-		function chargerpdf(idDocument){
-			document.getElementById("affiche-pdf").innerHTML = '<p id="loader" style="margin-top: 150px; margin-left: 300px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>';
-			xmlhttp= new XMLHttpRequest();
+		function chargerpdf(nomDocument){
+			document.querySelector("#affiche-pdf").innerHTML = '<p id="loader" style="margin-top: 150px; margin-left: 300px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>';
+			/*xmlhttp= new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function(){
 				if(this.readyState == 4 && (this.status == 200)){
 					document.getElementById("affiche-pdf").innerHTML = this.responseText;
@@ -82,12 +81,12 @@
 				}else{
 					document.getElementById("affiche-pdf").innerHTML = '<p id="loader" style="margin-top: 150px; margin-left: 300px;"><img src="{{asset('ajax-loader.gif')}}" />Veuillez patientez...</p>';
 				}
-			}
-			var url = "{{ path('nk_hint_afficherdoc', {'idDocument': 'exemple'}) }}";
-            url = url.replace("exemple", idDocument);
-            $("#loader").show();
-			xmlhttp.open("GET",url, true);
-			xmlhttp.send();
+			}*/
+			var url = '<iframe src="/afficher_document?file=uploads/pdf/exemple" height = "100%" width = "100%" scrolling="no"></iframe>';
+            url = url.replace("exemple", nomDocument);
+            document.querySelector("#affiche-pdf").innerHTML = url;
+            console.log(url);
+            console.log(document.querySelector("#affiche-pdf").innerHTML);
 		}
 	</script>
 

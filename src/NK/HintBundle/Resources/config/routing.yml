@@ -11,5 +11,5 @@ nk_hint_ajouterdoc:
     defaults: { _controller: NKHintBundle:Document:ajouterdoc }
 
 nk_hint_afficherdoc:
-    path:     /afficher_document/{idDocument}
+    path:     /afficher_document
     defaults: { _controller: NKHintBundle:Document:afficherDocument }
