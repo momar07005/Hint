@@ -71,7 +71,7 @@ header div input:focus{
 }
 
 #sup-header {
-	background: #404852;
+	background: #2d2d2d;
 	height: 50px;
 	position: relative;
 }
@@ -220,12 +220,12 @@ header div input:focus{
 /*footer*/
 
 #footer-container-general {
-    background-color: #403438;
-    border-top: 7px solid #f0eced;
+    background-color: #292929;
+    border-top: 7px solid #404952;
     padding: 0 32px;
 }
 #footer-container-socialWidget {
-	background-color: #33292d;
+	background-color: #191919;
 	border-bottom: 7px solid #404852;
 }
 #footer-container-socialWidget .footer-social {

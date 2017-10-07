@@ -1,10 +1,7 @@
 <aside>
-	<div class="aside-title">
-	   	Niveaux 
-	</div>
     <ul>
     	{% for cycle in listeCycles %}
-    		<div class="cycle" data-target=".t{{cycle.id}}" data-toggle="collapse">
+    		<div class="cycle" id="t{{cycle.id}}" data-target=".t{{cycle.id}}" data-toggle="collapse" onclick="asideCollapseColor('t{{cycle.id}}');">
 		    	<li>{{cycle.nomCycle}}</li>
 		    </div>
 		    <div class="collapse t{{cycle.id}}">
@@ -22,3 +19,17 @@
     	{% endfor %}
     </ul>
 </aside>
+
+<script type="text/javascript">
+    function asideCollapseColor(id) {
+        var element= $(".aside aside ul #"+id); 
+        if(element.attr("class") == "cycle-collapsed"){
+            $(".aside aside ul #"+id).attr("class","cycle");
+            isCollapsed = 0;
+        }else{
+        	$(".aside aside ul #"+id).attr("class","cycle-collapsed");
+        	isCollapsed = 1;
+        }
+    }
+</script>
+

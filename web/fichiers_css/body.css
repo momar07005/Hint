@@ -184,14 +184,15 @@
 }
 .main-container aside {
  height:100%;
- border-left-style:solid;
- text-align:center;
  display:block;
 
 }
 
 .aside {
  width:25%;
+ background-color: #404952;
+ color: white;
+ margin-right: -15px;
 }
 aside ul {
  list-style-type:none;
@@ -211,19 +212,45 @@ aside ul {
  margin-right: auto;
 }
 .cycle {
- font-size:20px;
- font-weight:bold;
- color:black;
- text-decoration:underline;
- margin-bottom:15px;
+ font-size:16px;
  cursor: pointer;
+ height: 40px;
+ margin-bottom: 0px;
+ padding-left: 30px;
+ padding-top: 10px;
+ border-top-style: solid;
+ border-bottom-style: solid;
+ border-color: #202020;
+ border-width: 1px;
 }
+
+.cycle-collapsed{
+ font-size:16px;
+ cursor: pointer;
+ height: 40px;
+ margin-bottom: 0px;
+ padding-left: 30px;
+ padding-top: 10px;
+ border-top-style: solid;
+ border-bottom-style: solid;
+ border-color: #202020;
+ border-width: 1px;
+ background-color: #292929;
+ border-left-width: 10px;
+ border-left-color: red;
+ border-left-style: solid; 
+}
+
 .level-name {
  border-left-style:solid;
  border-left-width:6px;
- margin-bottom:5px;
+ margin-top:5px;
  background-color:#fafafa;
+ height: 35px;
+ padding-left: 20px;
+ padding-top: 5px;
 }
+
 .level-name-link,.level-name-link:hover,.level-name-link:focus {
  color:black;
  font-weight:bold;
@@ -232,11 +259,25 @@ aside ul {
  margin-right: auto;
  margin-left: auto;
 }
+
+.aside .level-name{
+  background-color: #191919;
+  color: white;
+  margin-left: 25px;
+  margin-top: 0px;
+  margin-right: 0px;
+  border-bottom-color: #131313;
+  border-bottom-style: solid; 
+}
 .document-name {
  color:green;
 }
 .document-button {
  border:none;
+}
+
+#affiche-pdf{
+  padding-right: 0px;
 }
 
 @media (max-width:748px) {
