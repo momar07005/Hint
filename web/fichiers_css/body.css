@@ -310,7 +310,7 @@ aside ul {
   display:none !important;
  }
  aside ul{
-  padding-left: 20px;
+  padding-left: 17px;
  }
  .aside-title{
   border-bottom-width: 0px;
@@ -318,15 +318,37 @@ aside ul {
   font-size:  20px;
  }
  .cycle{
+  font-size:16px;
   font-weight: bold;
-  text-decoration: none;
-  font-size: 15px;
+  color: black;
+  cursor: pointer;
+  height: 40px;
+  margin-bottom: 0px;
+  padding-left: 30px;
+  padding-top: 10px;
+  border-top-style: solid;
   border-bottom-style: solid;
-  border-bottom-color: white;
-  border-width: 1px;
-  width: 100%;
-  height: 30px; 
+  border-color: #143053;
+  border-width: 1px; 
  }
+  .cycle-collapsed{
+   font-size:16px;
+   font-weight: bold;
+   color: black;
+   cursor: pointer;
+   height: 40px;
+   margin-bottom: 0px;
+   padding-left: 30px;
+   padding-top: 10px;
+   border-top-style: solid;
+   border-bottom-style: solid;
+   border-color: #202020;
+   border-width: 1px;
+   background-color: #243d92;
+   border-left-width: 10px;
+   border-left-color: red;
+   border-left-style: solid; 
+  }
  #top-menu {
   display:block;
   width:100%;
@@ -347,7 +369,7 @@ aside ul {
  #top-menu-core{
   width: auto;
   border-left-style:none;
-  background-color:#00b0be;
+  background-color:#2a74a8;
   text-align: left;
   height: 100%;
   padding-top: 10px;
@@ -360,10 +382,14 @@ aside ul {
  }
  
  .level-name {
-  height:35px;
-  text-align:center;
-  border-right-style:solid;
-  width:inherit;
+  background-color: #1a1a60;
+  color: black;
+  margin-left: 25px;
+  margin-top: 0px;
+  margin-right: 0px;
+  border-bottom-color: #000035;
+  border-bottom-style: solid;
+  width: inherit;
  }
 }
 @media (max-width:636px) {

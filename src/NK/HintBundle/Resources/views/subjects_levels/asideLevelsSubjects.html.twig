@@ -22,12 +22,12 @@
 
 <script type="text/javascript">
     function asideCollapseColor(id) {
-        var element= $(".aside aside ul #"+id); 
+        var element= $("aside ul #"+id); 
         if(element.attr("class") == "cycle-collapsed"){
-            $(".aside aside ul #"+id).attr("class","cycle");
+            $("aside ul #"+id).attr("class","cycle");
             isCollapsed = 0;
         }else{
-        	$(".aside aside ul #"+id).attr("class","cycle-collapsed");
+        	$("aside ul #"+id).attr("class","cycle-collapsed");
         	isCollapsed = 1;
         }
     }
