@@ -117,7 +117,7 @@ hwi_oauth:
 
         google:
             type:                google
-            client_id:           2344
-            client_secret:       2344ffgg
+            client_id:           809165908616-c1njaf3qqsgvb8cnku7fht1n1ibvvak4.apps.googleusercontent.com
+            client_secret:       bQ30hVwb6i8P3Hm3kXCekv_W
             scope:               "email profile"
             csrf: true
