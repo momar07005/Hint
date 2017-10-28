@@ -30,9 +30,9 @@ security:
                 resource_owners:
                     facebook:           "/login/check-facebook"
                     google:             "/login/check-google"
-                login_path:        /login
+                login_path:        /connect
                 use_forward:       false
-                failure_path:      /login
+                failure_path:      /connect
 
                 oauth_user_provider:
                     service: my.oauth_aware.user_provider.service
@@ -43,6 +43,7 @@ security:
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/connect$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
