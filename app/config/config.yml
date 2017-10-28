@@ -90,6 +90,9 @@ fos_user:
     from_email:
         address: kcheikhtidjane@ept.sn
         sender_name: Konteye
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationType
 # oauthbundle configuration
 hwi_oauth:
     connect:
@@ -105,7 +108,7 @@ hwi_oauth:
     resource_owners:
         facebook:
             type:                facebook
-            client_id:           2344
+            client_id:           959145414226279
             client_secret:       saz444
             options:
                 display: popup #dialog is optimized for popup window

@@ -42,7 +42,7 @@ class User extends BaseUser
      *     min=3,
      *     max=255,
      *     minMessage="Le nom est trop petit.",
-     *     maxMessage="Le nom est trop petit.",
+     *     maxMessage="Le nom est trop grand.",
      *     groups={"Registration", "Profile"}
      * )
      */
