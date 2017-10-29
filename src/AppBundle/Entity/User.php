@@ -51,14 +51,14 @@ class User extends BaseUser
     /**
      * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
      */
-    private $facebookId;
+    private $facebookID;
 
     private $facebookAccessToken;
 
     /**
      * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
      */
-    private $googleId;
+    private $googleID;
 
     private $googleAccessToken;
 
@@ -94,9 +94,9 @@ class User extends BaseUser
      * @param string $facebookId
      * @return User
      */
-    public function setFacebookId($facebookId)
+    public function setFacebookID($facebookID)
     {
-        $this->facebookId = $facebookId;
+        $this->facebookID = $facebookID;
 
         return $this;
     }
@@ -104,9 +104,9 @@ class User extends BaseUser
     /**
      * @return string
      */
-    public function getFacebookId()
+    public function getFacebookID()
     {
-        return $this->facebookId;
+        return $this->facebookID;
     }
 
     /**
@@ -133,9 +133,9 @@ class User extends BaseUser
      * @param string $googleId
      * @return User
      */
-    public function setGoogleId($googleId)
+    public function setGoogleID($googleID)
     {
-        $this->googleId = $googleId;
+        $this->googleID = $googleID;
 
         return $this;
     }
@@ -143,16 +143,16 @@ class User extends BaseUser
     /**
      * @return string
      */
-    public function getGoogleId()
+    public function getGoogleID()
     {
-        return $this->facebookId;
+        return $this->facebookID;
     }
 
     /**
      * @param string $googleAccessToken
      * @return User
      */
-    public function setGoogleAccessToken($gooleAccessToken)
+    public function setGoogleAccessToken($googleAccessToken)
     {
         $this->googleAccessToken = $googleAccessToken;
 

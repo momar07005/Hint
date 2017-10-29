@@ -38,7 +38,8 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
     my.oauth_aware.user_provider.service:
-        class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
+        class: AppBundle\Security\Core\User\MyFOSUBUserProvider
         arguments:
             - '@fos_user.user_manager'
-            - ['@fos_user.user_manager', {google: google} ]
+            - [ '@fos_user.user_manager', google: googleID ]
+
