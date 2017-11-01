@@ -44,6 +44,10 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
 
         // if null just create new user and set it properties
         if (null === $user) {
+            if (!$response->getFirstName() || !$response->getLastName() || !$response->getEmail() || !$response->getUsername()) 
+            {
+                return $user;
+            }
             $username = $response->getUsername();
             $user = new User();
             $user->setPrenom($response->getFirstName());
@@ -64,10 +68,6 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
             $getter1 = 'get' . ucfirst($serviceName). 'ID';
             $user->$setter($response->getAccessToken());
             $user->$setter1($username);
-            if (!$user->getPrenom() || !$user->getNom() || !$user->getEmail() || !$user->$getter1()) 
-            {
-                return $user;
-            }
             // ... save user to database
             $this->userManager->updateUser($user);
             
