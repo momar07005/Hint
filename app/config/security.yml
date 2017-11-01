@@ -32,7 +32,7 @@ security:
                     google:             "/login/check-google"
                 login_path:        /connect
                 use_forward:       false
-                failure_path:      /connect
+                failure_path:      /register
 
                 oauth_user_provider:
                     service: my.oauth_aware.user_provider.service
