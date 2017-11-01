@@ -61,10 +61,16 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
             $serviceName = $response->getResourceOwner()->getName();
             $setter = 'set' . ucfirst($serviceName) . 'AccessToken';
             $setter1 = 'set' . ucfirst($serviceName). 'ID';
+            $getter1 = 'get' . ucfirst($serviceName). 'ID';
             $user->$setter($response->getAccessToken());
             $user->$setter1($username);
+            if (!$user->getPrenom() || !$user->getNom() || !$user->getEmail() || !$user->$getter1()) 
+            {
+                return $user;
+            }
             // ... save user to database
             $this->userManager->updateUser($user);
+            
             return $user;
         }
         // else update access token of existing user
